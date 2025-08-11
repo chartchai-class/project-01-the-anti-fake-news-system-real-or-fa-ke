@@ -1,0 +1,604 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "newsId": 1,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "I saw this news on TV as well. Officials have confirmed the sightings, but they haven't identified the species yet.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-08-10T12:53:00"
+    },
+    {
+      "id": 2,
+      "newsId": 1,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "A friend who lives by the river sent me a photo. The creatures are huge!",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-08-10T13:53:00"
+    },
+    {
+      "id": 3,
+      "newsId": 2,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "I checked the government's website and there's no announcement about an extra holiday. This is probably fake news.",
+      "imageUrl": "",
+      "createdAt": "2025-08-09T10:46:00"
+    },
+    {
+      "id": 4,
+      "newsId": 2,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "This is being shared everywhere, but the source isn't reliable. Everyone should verify before sharing!",
+      "imageUrl": "",
+      "createdAt": "2025-08-09T11:46:00"
+    },
+    {
+      "id": 5,
+      "newsId": 2,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "I called the government hotline and they said there's no such policy. Definitely a hoax.",
+      "imageUrl": "",
+      "createdAt": "2025-08-09T12:46:00"
+    },
+    {
+      "id": 6,
+      "newsId": 3,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "The water level is still normal. The news about severe flooding like in '54 is not true.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-08-08T08:39:00"
+    },
+    {
+      "id": 7,
+      "newsId": 3,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "It's completely dry in my neighborhood. This news is totally misleading.",
+      "imageUrl": "",
+      "createdAt": "2025-08-08T09:39:00"
+    },
+    {
+      "id": 8,
+      "newsId": 3,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "The Meteorological Department did announce that a storm is coming, which will cause water levels to rise.",
+      "imageUrl": "",
+      "createdAt": "2025-08-08T10:39:00"
+    },
+    {
+      "id": 9,
+      "newsId": 3,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "I've seen photos from the news showing rising water levels in several areas.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-08-08T11:39:00"
+    },
+    {
+      "id": 10,
+      "newsId": 4,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "not_fake",
+      "comment": "There are international research studies that talk about this vaccine. You can look them up.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-08-07T06:32:00"
+    },
+    {
+      "id": 11,
+      "newsId": 5,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "fake",
+      "comment": "If it were really free, there would be an official announcement. There isn't one.",
+      "imageUrl": "",
+      "createdAt": "2025-08-06T04:25:00"
+    },
+    {
+      "id": 12,
+      "newsId": 5,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "There is a pilot project offering free use, but it's only on certain routes and during specific hours, not all year round.",
+      "imageUrl": "",
+      "createdAt": "2025-08-06T05:25:00"
+    },
+    {
+      "id": 13,
+      "newsId": 6,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "The Meteorological Department has announced there's no tsunami risk. This news is false.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-08-05T02:18:00"
+    },
+    {
+      "id": 14,
+      "newsId": 6,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "A lot of people are sharing this, but it's old fake news that has circulated before.",
+      "imageUrl": "",
+      "createdAt": "2025-08-05T03:18:00"
+    },
+    {
+      "id": 15,
+      "newsId": 6,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "Someone is using an old news story to cause panic. Don't fall for it.",
+      "imageUrl": "",
+      "createdAt": "2025-08-05T04:18:00"
+    },
+    {
+      "id": 16,
+      "newsId": 7,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "not_fake",
+      "comment": "My son's school announced the exam postponement. It's likely happening nationwide.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-08-04T00:11:00"
+    },
+    {
+      "id": 17,
+      "newsId": 7,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "not_fake",
+      "comment": "My university also announced this. It might be a ministry-level policy.",
+      "imageUrl": "",
+      "createdAt": "2025-08-04T01:11:00"
+    },
+    {
+      "id": 18,
+      "newsId": 7,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "Check with the Ministry of Education. They've made an official announcement.",
+      "imageUrl": "",
+      "createdAt": "2025-08-04T02:11:00"
+    },
+    {
+      "id": 19,
+      "newsId": 7,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "My teacher friend said there was a meeting about this.",
+      "imageUrl": "",
+      "createdAt": "2025-08-04T03:11:00"
+    },
+    {
+      "id": 20,
+      "newsId": 8,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "I checked with the Royal Forest Department and there is no such project. It seems like a false claim.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-08-02T22:04:00"
+    },
+    {
+      "id": 21,
+      "newsId": 9,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "I've been hearing rumors about this for a while, but there's no official confirmation yet.",
+      "imageUrl": "",
+      "createdAt": "2025-08-01T20:57:00"
+    },
+    {
+      "id": 22,
+      "newsId": 9,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "This news always comes out during election campaigns, but it's never been true.",
+      "imageUrl": "",
+      "createdAt": "2025-08-01T21:57:00"
+    },
+    {
+      "id": 23,
+      "newsId": 10,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "It's impossible to replace all teachers with robots anytime soon. There's a huge lack of budget and infrastructure.",
+      "imageUrl": "",
+      "createdAt": "2025-07-31T18:50:00"
+    },
+    {
+      "id": 24,
+      "newsId": 10,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "not_fake",
+      "comment": "Some countries are starting to use robots to assist in teaching, but it's not to the point of replacing everyone.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-31T19:50:00"
+    },
+    {
+      "id": 25,
+      "newsId": 10,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "Robots don't have the capability for in-depth teaching and student interaction like humans do.",
+      "imageUrl": "",
+      "createdAt": "2025-07-31T20:50:00"
+    },
+    {
+      "id": 26,
+      "newsId": 11,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "The Meteorological Department released its forecast. The temperature won't be that low.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-30T16:43:00"
+    },
+    {
+      "id": 27,
+      "newsId": 11,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "This rumor comes out every year. News like this always starts circulating around the end of the year.",
+      "imageUrl": "",
+      "createdAt": "2025-07-30T17:43:00"
+    },
+    {
+      "id": 28,
+      "newsId": 11,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "It's true, but that temperature is for Doi Inthanon's peak, not the entire country.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-30T18:43:00"
+    },
+    {
+      "id": 29,
+      "newsId": 11,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "There was a cold weather warning issued for the northern region.",
+      "imageUrl": "",
+      "createdAt": "2025-07-30T19:43:00"
+    },
+    {
+      "id": 30,
+      "newsId": 12,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "This news pops up occasionally, but there's no confirmation from the Ministry of Energy.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-30T14:36:00"
+    },
+    {
+      "id": 31,
+      "newsId": 13,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "Several research studies from famous universities confirm this.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-29T12:29:00"
+    },
+    {
+      "id": 32,
+      "newsId": 13,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "Meditation really has benefits for mental and physical health. There are many articles to support it.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-29T13:29:00"
+    },
+    {
+      "id": 33,
+      "newsId": 14,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "There was news about this last year, but the project was postponed.",
+      "imageUrl": "",
+      "createdAt": "2025-07-28T10:22:00"
+    },
+    {
+      "id": 34,
+      "newsId": 14,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "There's only a pilot program right now, it's not being used widely yet.",
+      "imageUrl": "",
+      "createdAt": "2025-07-28T11:22:00"
+    },
+    {
+      "id": 35,
+      "newsId": 14,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "not_fake",
+      "comment": "I saw job openings for electric bus drivers. It seems like the plan is real.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-28T12:22:00"
+    },
+    {
+      "id": 36,
+      "newsId": 15,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "not_fake",
+      "comment": "My son's teacher said there really is a new curriculum reform project.",
+      "imageUrl": "",
+      "createdAt": "2025-07-27T08:15:00"
+    },
+    {
+      "id": 37,
+      "newsId": 15,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "News about education reform comes out with every government, but I've never seen it materialize.",
+      "imageUrl": "",
+      "createdAt": "2025-07-27T09:15:00"
+    },
+    {
+      "id": 38,
+      "newsId": 15,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "There's a draft of the new act being prepared to be submitted to parliament.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-27T10:15:00"
+    },
+    {
+      "id": 39,
+      "newsId": 15,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "This is probably just political gossip.",
+      "imageUrl": "",
+      "createdAt": "2025-07-27T11:15:00"
+    },
+    {
+      "id": 40,
+      "newsId": 16,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "Developing renewable energy takes a long time. This news seems a bit exaggerated.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-26T06:08:00"
+    },
+    {
+      "id": 41,
+      "newsId": 17,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "The Ministry of Transport announced the plan for a new high-speed rail line.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-25T04:01:00"
+    },
+    {
+      "id": 42,
+      "newsId": 17,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "I've seen some of the new rail route blueprints in the news.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-25T05:01:00"
+    },
+    {
+      "id": 43,
+      "newsId": 18,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "It's true. This year's rain hasn't been seasonal, causing crop damage.",
+      "imageUrl": "",
+      "createdAt": "2025-07-24T02:54:00"
+    },
+    {
+      "id": 44,
+      "newsId": 18,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "Climate change is normal. There's nothing to be alarmed about.",
+      "imageUrl": "",
+      "createdAt": "2025-07-24T03:54:00"
+    },
+    {
+      "id": 45,
+      "newsId": 18,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "This news is overly dramatic. There are always drought and flood issues every year.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-24T04:54:00"
+    },
+    {
+      "id": 46,
+      "newsId": 19,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "I haven't seen an announcement from the council. This is probably just a proposal.",
+      "imageUrl": "",
+      "createdAt": "2025-07-23T00:47:00"
+    },
+    {
+      "id": 47,
+      "newsId": 19,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "not_fake",
+      "comment": "The news includes drawings of the new park's design. It seems legit.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-23T01:47:00"
+    },
+    {
+      "id": 48,
+      "newsId": 19,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "The deputy governor just confirmed this in an interview.",
+      "imageUrl": "",
+      "createdAt": "2025-07-23T02:47:00"
+    },
+    {
+      "id": 49,
+      "newsId": 19,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "I heard this project was canceled.",
+      "imageUrl": "",
+      "createdAt": "2025-07-23T03:47:00"
+    },
+    {
+      "id": 50,
+      "newsId": 20,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "not_fake",
+      "comment": "Congratulations to Khun Somchai! I've seen him on many TV shows lately.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-21T22:40:00"
+    },
+    {
+      "id": 51,
+      "newsId": 21,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "This was discussed in the cabinet meeting, but it's not yet in effect.",
+      "imageUrl": "",
+      "createdAt": "2025-07-20T20:33:00"
+    },
+    {
+      "id": 52,
+      "newsId": 21,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "fake",
+      "comment": "News about lower electricity bills comes out all the time, but it's never true.",
+      "imageUrl": "",
+      "createdAt": "2025-07-20T21:33:00"
+    },
+    {
+      "id": 53,
+      "newsId": 22,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "I saw a picture of the robot helping an elderly person lift things. It's very useful.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-19T18:26:00"
+    },
+    {
+      "id": 54,
+      "newsId": 22,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "fake",
+      "comment": "This technology is still in the trial phase. It's very expensive and probably won't be used widely anytime soon.",
+      "imageUrl": "",
+      "createdAt": "2025-07-19T19:26:00"
+    },
+    {
+      "id": 55,
+      "newsId": 22,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "These robots require proper maintenance and repairs, which is a major drawback.",
+      "imageUrl": "",
+      "createdAt": "2025-07-19T20:26:00"
+    },
+    {
+      "id": 56,
+      "newsId": 23,
+      "userId": 8,
+      "username": "Pongsakorn Sukkasem",
+      "vote": "not_fake",
+      "comment": "I heard from a friend in the north that there's very little rain this year.",
+      "imageUrl": "https://picsum.photos/seed/evidenceB/800/450",
+      "createdAt": "2025-07-18T16:19:00"
+    },
+    {
+      "id": 57,
+      "newsId": 23,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "fake",
+      "comment": "The Royal Irrigation Department confirmed there's enough water for cultivation.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-18T17:19:00"
+    },
+    {
+      "id": 58,
+      "newsId": 23,
+      "userId": 6,
+      "username": "Kitti Sriteb",
+      "vote": "not_fake",
+      "comment": "There's news about a royal rainmaking project to solve the drought issue.",
+      "imageUrl": "",
+      "createdAt": "2025-07-18T18:19:00"
+    },
+    {
+      "id": 59,
+      "newsId": 23,
+      "userId": 7,
+      "username": "Napha Wundee",
+      "vote": "not_fake",
+      "comment": "There was an official announcement for farmers to be cautious about drought.",
+      "imageUrl": "",
+      "createdAt": "2025-07-18T19:19:00"
+    },
+    {
+      "id": 60,
+      "newsId": 24,
+      "userId": 5,
+      "username": "Chiraporn Chanpen",
+      "vote": "not_fake",
+      "comment": "The government is seriously supporting this. They've already allocated a budget for it.",
+      "imageUrl": "https://picsum.photos/seed/evidenceA/800/450",
+      "createdAt": "2025-07-18T14:12:00"
+    }
+  ]
+}
