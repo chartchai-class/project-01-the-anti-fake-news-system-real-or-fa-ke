@@ -1,0 +1,604 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "topic": "Monster Found in the Chao Phraya River",
+      "shortDetail": "Summary: Monster found in the Chao Phraya River - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Monster Found in the Chao Phraya River' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-08-10T11:53:00",
+      "imageUrl": "https://picsum.photos/seed/news1/640/360",
+      "votes": {
+        "fake": 3,
+        "notFake": 96
+      }
+    },
+    {
+      "id": 2,
+      "topic": "Government Announces 5-Day Holiday",
+      "shortDetail": "Summary: Government announces 5-day holiday - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Government Announces 5-Day Holiday' for testing news detail page, including sample paragraphs and image link.",
+      "status": "fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-08-09T09:46:00",
+      "imageUrl": "https://picsum.photos/seed/news2/640/360",
+      "votes": {
+        "fake": 18,
+        "notFake": 2
+      }
+    },
+    {
+      "id": 3,
+      "topic": "Severe Flooding in Bangkok Matches 2011 Levels",
+      "shortDetail": "Summary: Severe flooding in Bangkok matches 2011 levels - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Severe Flooding in Bangkok Matches 2011 Levels' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-08-08T07:39:00",
+      "imageUrl": "https://picsum.photos/seed/news3/640/360",
+      "votes": {
+        "fake": 3,
+        "notFake": 46
+      }
+    },
+    {
+      "id": 4,
+      "topic": "New Vaccine Claims to Grant Immortality",
+      "shortDetail": "Summary: New vaccine claims to grant immortality - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Vaccine Claims to Grant Immortality' for testing news detail page, including sample paragraphs and image link.",
+      "status": "fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-08-07T05:32:00",
+      "imageUrl": "https://picsum.photos/seed/news4/640/360",
+      "votes": {
+        "fake": 32,
+        "notFake": 5
+      }
+    },
+    {
+      "id": 5,
+      "topic": "High-Speed Train Service Free All Year",
+      "shortDetail": "Summary: High-speed train service free all year - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'High-Speed Train Service Free All Year' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-08-06T03:25:00",
+      "imageUrl": "https://picsum.photos/seed/news5/640/360",
+      "votes": {
+        "fake": 5,
+        "notFake": 28
+      }
+    },
+    {
+      "id": 6,
+      "topic": "Tsunami Warning Nationwide",
+      "shortDetail": "Summary: Tsunami warning nationwide - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Tsunami Warning Nationwide' for testing news detail page, including sample paragraphs and image link.",
+      "status": "fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-08-05T01:18:00",
+      "imageUrl": "https://picsum.photos/seed/news6/640/360",
+      "votes": {
+        "fake": 109,
+        "notFake": 17
+      }
+    },
+    {
+      "id": 7,
+      "topic": "Midterm Exam Dates Changed",
+      "shortDetail": "Summary: Midterm exam dates changed - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Midterm Exam Dates Changed' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-08-03T23:11:00",
+      "imageUrl": "https://picsum.photos/seed/news7/640/360",
+      "votes": {
+        "fake": 4,
+        "notFake": 26
+      }
+    },
+    {
+      "id": 8,
+      "topic": "Plant One Tree, Get 1,000 Baht",
+      "shortDetail": "Summary: Plant one tree, get 1,000 baht - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Plant One Tree, Get 1,000 Baht' for testing news detail page, including sample paragraphs and image link.",
+      "status": "fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-08-02T21:04:00",
+      "imageUrl": "https://picsum.photos/seed/news8/640/360",
+      "votes": {
+        "fake": 69,
+        "notFake": 0
+      }
+    },
+    {
+      "id": 9,
+      "topic": "Free Electricity for All Households",
+      "shortDetail": "Summary: Free electricity for all households - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Free Electricity for All Households' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-08-01T19:57:00",
+      "imageUrl": "https://picsum.photos/seed/news9/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 18
+      }
+    },
+    {
+      "id": 10,
+      "topic": "Robots to Fully Replace Human Teachers",
+      "shortDetail": "Summary: Robots to fully replace human teachers - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Robots to Fully Replace Human Teachers' for testing news detail page, including sample paragraphs and image link.",
+      "status": "fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-31T17:50:00",
+      "imageUrl": "https://picsum.photos/seed/news10/640/360",
+      "votes": {
+        "fake": 42,
+        "notFake": 3
+      }
+    },
+    {
+      "id": 11,
+      "topic": "Temperature to Drop to 10°C Across Thailand Tomorrow",
+      "shortDetail": "Summary: Temperature to drop to 10°C across Thailand tomorrow - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Temperature to Drop to 10°C Across Thailand Tomorrow' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-30T15:43:00",
+      "imageUrl": "https://picsum.photos/seed/news11/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 79
+      }
+    },
+    {
+      "id": 12,
+      "topic": "Large Oil Reserve Discovered in Northeastern Region",
+      "shortDetail": "Summary: Large oil reserve discovered in northeastern region - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Large Oil Reserve Discovered in Northeastern Region' for testing news detail page, including sample paragraphs and image link.",
+      "status": "fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-30T13:36:00",
+      "imageUrl": "https://picsum.photos/seed/news12/640/360",
+      "votes": {
+        "fake": 86,
+        "notFake": 6
+      }
+    },
+    {
+      "id": 13,
+      "topic": "New Study Finds Health Benefits of Daily Meditation",
+      "shortDetail": "Summary: New study finds health benefits of daily meditation - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Study Finds Health Benefits of Daily Meditation' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-29T11:29:00",
+      "imageUrl": "https://picsum.photos/seed/news13/640/360",
+      "votes": {
+        "fake": 2,
+        "notFake": 34
+      }
+    },
+    {
+      "id": 14,
+      "topic": "City Plans to Launch Electric Bus Fleet Next Year",
+      "shortDetail": "Summary: City plans to launch electric bus fleet next year - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'City Plans to Launch Electric Bus Fleet Next Year' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-28T09:22:00",
+      "imageUrl": "https://picsum.photos/seed/news14/640/360",
+      "votes": {
+        "fake": 10,
+        "notFake": 18
+      }
+    },
+    {
+      "id": 15,
+      "topic": "Government Proposes New Education Reform",
+      "shortDetail": "Summary: Government proposes new education reform - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Government Proposes New Education Reform' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-27T07:15:00",
+      "imageUrl": "https://picsum.photos/seed/news15/640/360",
+      "votes": {
+        "fake": 1,
+        "notFake": 29
+      }
+    },
+    {
+      "id": 16,
+      "topic": "Breakthrough in Renewable Energy Technology Announced",
+      "shortDetail": "Summary: Breakthrough in renewable energy technology announced - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Breakthrough in Renewable Energy Technology Announced' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-26T05:08:00",
+      "imageUrl": "https://picsum.photos/seed/news16/640/360",
+      "votes": {
+        "fake": 5,
+        "notFake": 47
+      }
+    },
+    {
+      "id": 17,
+      "topic": "New High-Speed Train Route to Connect Major Cities",
+      "shortDetail": "Summary: New high-speed train route to connect major cities - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New High-Speed Train Route to Connect Major Cities' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-25T03:01:00",
+      "imageUrl": "https://picsum.photos/seed/news17/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 50
+      }
+    },
+    {
+      "id": 18,
+      "topic": "New Study Shows Climate Change Impact on Agriculture",
+      "shortDetail": "Summary: New study shows climate change impact on agriculture - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Study Shows Climate Change Impact on Agriculture' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-24T01:54:00",
+      "imageUrl": "https://picsum.photos/seed/news18/640/360",
+      "votes": {
+        "fake": 6,
+        "notFake": 38
+      }
+    },
+    {
+      "id": 19,
+      "topic": "City Council Approves New Park Construction",
+      "shortDetail": "Summary: City council approves new park construction - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'City Council Approves New Park Construction' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-22T23:47:00",
+      "imageUrl": "https://picsum.photos/seed/news19/640/360",
+      "votes": {
+        "fake": 2,
+        "notFake": 15
+      }
+    },
+    {
+      "id": 20,
+      "topic": "Local Farmer Wins International Award",
+      "shortDetail": "Summary: Local farmer wins international award - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Local Farmer Wins International Award' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-21T21:40:00",
+      "imageUrl": "https://picsum.photos/seed/news20/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 14
+      }
+    },
+    {
+      "id": 21,
+      "topic": "Electricity Bills to be Reduced Next Month",
+      "shortDetail": "Summary: Electricity bills to be reduced next month - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Electricity Bills to be Reduced Next Month' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-20T19:33:00",
+      "imageUrl": "https://picsum.photos/seed/news21/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 21
+      }
+    },
+    {
+      "id": 22,
+      "topic": "New Robot Technology to Assist Elderly",
+      "shortDetail": "Summary: New robot technology to assist elderly - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Robot Technology to Assist Elderly' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-19T17:26:00",
+      "imageUrl": "https://picsum.photos/seed/news22/640/360",
+      "votes": {
+        "fake": 1,
+        "notFake": 25
+      }
+    },
+    {
+      "id": 23,
+      "topic": "Severe Drought Predicted in Northern Region",
+      "shortDetail": "Summary: Severe drought predicted in northern region - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Severe Drought Predicted in Northern Region' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-18T15:19:00",
+      "imageUrl": "https://picsum.photos/seed/news23/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 22
+      }
+    },
+    {
+      "id": 24,
+      "topic": "Government Invests in New Renewable Energy Projects",
+      "shortDetail": "Summary: Government invests in new renewable energy projects - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Government Invests in New Renewable Energy Projects' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-18T13:12:00",
+      "imageUrl": "https://picsum.photos/seed/news24/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 30
+      }
+    },
+    {
+      "id": 25,
+      "topic": "New Smartphone Model Released with Revolutionary Features",
+      "shortDetail": "Summary: New smartphone model released with revolutionary features - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Smartphone Model Released with Revolutionary Features' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-17T11:05:00",
+      "imageUrl": "https://picsum.photos/seed/news25/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 34
+      }
+    },
+    {
+      "id": 26,
+      "topic": "City Plans to Expand Public Wi-Fi Network",
+      "shortDetail": "Summary: City plans to expand public Wi-Fi network - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'City Plans to Expand Public Wi-Fi Network' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-16T08:58:00",
+      "imageUrl": "https://picsum.photos/seed/news26/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 27
+      }
+    },
+    {
+      "id": 27,
+      "topic": "Scientists Discover New Species in Rainforest",
+      "shortDetail": "Summary: Scientists discover new species in rainforest - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Scientists Discover New Species in Rainforest' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-15T06:51:00",
+      "imageUrl": "https://picsum.photos/seed/news27/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 20
+      }
+    },
+    {
+      "id": 28,
+      "topic": "Traffic Congestion Eases with New Road System",
+      "shortDetail": "Summary: Traffic congestion eases with new road system - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Traffic Congestion Eases with New Road System' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-14T04:44:00",
+      "imageUrl": "https://picsum.photos/seed/news28/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 23
+      }
+    },
+    {
+      "id": 29,
+      "topic": "Local Market Sees Record Sales This Quarter",
+      "shortDetail": "Summary: Local market sees record sales this quarter - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Local Market Sees Record Sales This Quarter' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-13T02:37:00",
+      "imageUrl": "https://picsum.photos/seed/news29/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 29
+      }
+    },
+    {
+      "id": 30,
+      "topic": "University Launches Scholarship Program for Low-Income Students",
+      "shortDetail": "Summary: University launches scholarship program for low-income students - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'University Launches Scholarship Program for Low-Income Students' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-12T00:30:00",
+      "imageUrl": "https://picsum.photos/seed/news30/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 26
+      }
+    },
+    {
+      "id": 31,
+      "topic": "Public Transport Fare Reduced for Students",
+      "shortDetail": "Summary: Public transport fare reduced for students - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Public Transport Fare Reduced for Students' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-10T22:23:00",
+      "imageUrl": "https://picsum.photos/seed/news31/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 31
+      }
+    },
+    {
+      "id": 32,
+      "topic": "New App Helps Farmers Monitor Crops Remotely",
+      "shortDetail": "Summary: New app helps farmers monitor crops remotely - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New App Helps Farmers Monitor Crops Remotely' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-09T20:16:00",
+      "imageUrl": "https://picsum.photos/seed/news32/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 28
+      }
+    },
+    {
+      "id": 33,
+      "topic": "City to Host International Music Festival",
+      "shortDetail": "Summary: City to host international music festival - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'City to Host International Music Festival' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-08T18:09:00",
+      "imageUrl": "https://picsum.photos/seed/news33/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 35
+      }
+    },
+    {
+      "id": 34,
+      "topic": "Tech Startup Raises $10 Million in Funding",
+      "shortDetail": "Summary: Tech startup raises $10 million in funding - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'Tech Startup Raises $10 Million in Funding' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-07T16:02:00",
+      "imageUrl": "https://picsum.photos/seed/news34/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 32
+      }
+    },
+    {
+      "id": 35,
+      "topic": "New Highway Project to Reduce Traffic by 30%",
+      "shortDetail": "Summary: New highway project to reduce traffic by 30% - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Highway Project to Reduce Traffic by 30%' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-06T13:55:00",
+      "imageUrl": "https://picsum.photos/seed/news35/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 33
+      }
+    },
+    {
+      "id": 36,
+      "topic": "School Reopens with New COVID-19 Protocols",
+      "shortDetail": "Summary: School reopens with new COVID-19 protocols - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'School Reopens with New COVID-19 Protocols' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-05T11:48:00",
+      "imageUrl": "https://picsum.photos/seed/news36/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 25
+      }
+    },
+    {
+      "id": 37,
+      "topic": "New Law Passed to Protect Endangered Species",
+      "shortDetail": "Summary: New law passed to protect endangered species - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New Law Passed to Protect Endangered Species' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 1,
+      "reporterName": "Somchai Chaidee",
+      "reportedAt": "2025-07-04T09:41:00",
+      "imageUrl": "https://picsum.photos/seed/news37/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 19
+      }
+    },
+    {
+      "id": 38,
+      "topic": "City Implements New Recycling Program",
+      "shortDetail": "Summary: City implements new recycling program - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'City Implements New Recycling Program' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 2,
+      "reporterName": "Wipha Sangtong",
+      "reportedAt": "2025-07-03T07:34:00",
+      "imageUrl": "https://picsum.photos/seed/news38/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 22
+      }
+    },
+    {
+      "id": 39,
+      "topic": "National Sports Team Qualifies for World Championship",
+      "shortDetail": "Summary: National sports team qualifies for world championship - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'National Sports Team Qualifies for World Championship' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 3,
+      "reporterName": "Adisak Punsuk",
+      "reportedAt": "2025-07-02T05:27:00",
+      "imageUrl": "https://picsum.photos/seed/news39/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 26
+      }
+    },
+    {
+      "id": 40,
+      "topic": "New App Launches to Promote Local Tourism",
+      "shortDetail": "Summary: New app launches to promote local tourism - sample short detail for homepage",
+      "fullDetail": "Full details of the news 'New App Launches to Promote Local Tourism' for testing news detail page, including sample paragraphs and image link.",
+      "status": "not_fake",
+      "reporterId": 4,
+      "reporterName": "Kamon Shopon",
+      "reportedAt": "2025-07-01T03:20:00",
+      "imageUrl": "https://picsum.photos/seed/news40/640/360",
+      "votes": {
+        "fake": 0,
+        "notFake": 31
+      }
+    }
+  ]
+}

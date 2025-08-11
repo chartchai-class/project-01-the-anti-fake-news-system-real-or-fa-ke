@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Somchai Chaidee",
+      "role": "reporter"
+    },
+    {
+      "id": 2,
+      "name": "Wipha Sangtong",
+      "role": "reporter"
+    },
+    {
+      "id": 3,
+      "name": "Adisak Punsuk",
+      "role": "reporter"
+    },
+    {
+      "id": 4,
+      "name": "Kamon Shopon",
+      "role": "reporter"
+    },
+    {
+      "id": 5,
+      "name": "Chiraporn Chanpen",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "name": "Kitti Sriteb",
+      "role": "user"
+    },
+    {
+      "id": 7,
+      "name": "Napha Wundee",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "name": "Pongsakorn Sukkasem",
+      "role": "user"
+    }
+  ]
+}
