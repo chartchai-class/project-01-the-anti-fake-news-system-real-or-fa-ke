@@ -2,8 +2,8 @@
 
 <template>
   <section class="page">
-    <h1>About</h1>
-    <p>This app crowdsources votes & comments to flag fake news.</p>
+    <h1>Settings</h1>
+    <p>Theme, density, and default page size will be here.</p>
   </section>
 </template>
 
