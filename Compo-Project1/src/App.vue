@@ -31,7 +31,7 @@ function toggleTheme() {
 
       <nav class="nav" aria-label="Primary">
         <RouterLink :to="{ name: 'news-list' }">News</RouterLink>
-        <RouterLink :to="{ name: 'about' }">About</RouterLink>
+        <RouterLink :to="{ name: 'developer' }">Developer</RouterLink>
         <RouterLink :to="{ name: 'stats' }">Stats</RouterLink>
         <RouterLink :to="{ name: 'settings' }">Settings</RouterLink>
       </nav>
@@ -45,9 +45,9 @@ function toggleTheme() {
 
     <!-- Flash/Toast (ต่างจากแลปเก่า: เป็นมุมขวาบน) -->
     <transition name="fade">
-      <!-- <div v-if="message" class="toast" role="status" aria-live="polite">
-        {{ message }}
-      </div> -->
+      <div v-if="false" class="toast">
+        <p>Flash message goes here.</p>
+      </div>
     </transition>
 
     <!-- Main container -->

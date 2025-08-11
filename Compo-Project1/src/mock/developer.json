@@ -1,0 +1,22 @@
+{
+    "developer":[
+  {
+    "id": 1,
+    "name": "Chanagun Khunphet",
+    "code": "662115006",
+    "description": "Responsible for UI, UX, and client-side logic."
+  },
+  {
+    "id": 2,
+    "name": "Chatchapong Thanongdee",
+    "code": "662115011",
+    "description": "Handles APIs, database, and server-side logic."
+  },
+  {
+    "id": 3,
+    "name": "Thippharake Na Chiengmai",
+    "code": "662115019",
+    "description": "Ensures the app works flawlessly through testing."
+  }
+]
+}

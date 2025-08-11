@@ -9,7 +9,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/news/:id',
-    component: () => import('@/layouts/NewsDetailLayout.vue'), // Layout เฉพาะ detail
+    component: () => import('@/components/layout/NewsDetailLayout.vue'), // Layout เฉพาะ detail
     children: [
       {
         path: '',
@@ -24,9 +24,9 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/AboutView.vue'),
+    path: '/developer',
+    name: 'developer',
+    component: () => import('@/views/DeveloperView.vue'),
   },
   {
     path: '/stats',
