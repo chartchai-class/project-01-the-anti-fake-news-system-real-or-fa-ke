@@ -2,8 +2,8 @@
 
 <template>
   <section class="page">
-    <h1>About</h1>
-    <p>This app crowdsources votes & comments to flag fake news.</p>
+    <h1>Stats</h1>
+    <p>Coming soon: charts for % Fake vs Not Fake by category.</p>
   </section>
 </template>
 
