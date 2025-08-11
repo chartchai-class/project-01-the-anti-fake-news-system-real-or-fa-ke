@@ -21,19 +21,10 @@ export default defineConfig({
 
           let newsRaw = []
           let commentsRaw = []
-
-          try {
+          
             newsRaw = JSON.parse(fs.readFileSync(newsPath, 'utf-8'))
-          } catch (e) {
-            console.error('Read news.json error:', e.message)
-          }
-          try {
             commentsRaw = JSON.parse(fs.readFileSync(commentsPath, 'utf-8'))
-          } catch (e) {
-            console.error('Read comments.json error:', e.message)
-          }
 
-          // ✅ รองรับทั้ง array ตรง ๆ และ object หุ้ม array
           const news = Array.isArray(newsRaw) ? newsRaw : (newsRaw?.news ?? [])
           const comments = Array.isArray(commentsRaw) ? commentsRaw : (commentsRaw?.comments ?? [])
 
