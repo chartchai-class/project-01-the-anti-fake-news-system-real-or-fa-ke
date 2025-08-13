@@ -1,0 +1,45 @@
+/** สถานะข่าวในระบบ */
+export type Status = 'fake' | 'not-fake'
+
+/** คะแนนโหวต (ถ้ามีเก็บไว้ในไฟล์/ฝั่ง client) */
+export interface Votes {
+  fake: number
+  notFake: number
+}
+
+/** โครงสร้างข่าว 1 รายการ */
+export interface NewsItem {
+  id: string | number
+  topic: string
+  shortDetail: string
+  status: Status
+  reporterName: string
+  datetime?: string
+  imageUrl?: string
+  votes?: Votes
+
+  /**
+   * เผื่อ data เก่าบางที่ใช้ชื่อฟิลด์ reporter
+   * จะยังอ่านได้โดยไม่ error (อย่าใช้สองอันพร้อมกัน)
+   */
+  reporter?: string
+}
+
+/** คอมเมนต์ใต้ข่าว */
+export interface CommentItem {
+  id: string | number
+  newsId: string | number
+  text: string
+  at?: string // ISO timestamp
+}
+
+/** รูปแบบไฟล์ db.json ทั้งก้อน */
+export interface DB {
+  news: NewsItem[]
+  comments: CommentItem[]
+}
+
+/** params ของ route /news/:id */
+export interface NewsRouteParams {
+  id: string
+}

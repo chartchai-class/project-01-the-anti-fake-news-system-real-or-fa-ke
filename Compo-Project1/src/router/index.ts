@@ -10,6 +10,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/news/:id',
     component: () => import('@/components/layout/NewsDetailLayout.vue'), // Layout เฉพาะ detail
+    props: true,
     children: [
       {
         path: '',
