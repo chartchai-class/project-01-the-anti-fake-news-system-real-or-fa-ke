@@ -61,8 +61,6 @@ function statusLabel(s: unknown): string {
         <div class="mt-2 text-xs text-slate-500 dark:text-slate-400">
           Votes: Fake {{ item.votes?.fake ?? '-' }}, Not Fake {{ item.votes?.notFake ?? '-' }}
         </div>
-
-        <span class="mt-2 inline-block text-sm text-green-600 dark:text-green-400">View details</span>
       </RouterLink>
     </li>
   </ul>
