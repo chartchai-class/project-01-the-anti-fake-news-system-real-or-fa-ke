@@ -27,7 +27,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/developer',
     name: 'developer',
-    component: () => import('@/views/DeveloperView.vue'),
+    component: () => import(/* webpackPrefetch: true */ '@/views/DeveloperView.vue'),
   },
   {
     path: '/:pathMatch(.*)*',

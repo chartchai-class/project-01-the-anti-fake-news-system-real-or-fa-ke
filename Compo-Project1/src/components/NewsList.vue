@@ -39,7 +39,16 @@ function statusLabel(s: unknown): string {
         class="block rounded-xl border border-slate-200 bg-white p-3 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-400
                hover:shadow hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
       >
-        <img v-if="item.imageUrl" :src="item.imageUrl" alt="" class="mb-2 h-40 w-full rounded-lg object-cover" loading="lazy" />
+        <img
+          v-if="item.imageUrl"
+          :src="item.imageUrl"
+          alt=""
+          class="mb-2 h-40 w-full rounded-lg object-cover"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="low"
+          sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+        />
         <strong class="block text-base leading-snug line-clamp-2">{{ item.topic }}</strong>
         <span class="mt-1 block text-sm text-slate-600 line-clamp-3 dark:text-slate-300">{{ item.shortDetail }}</span>
 

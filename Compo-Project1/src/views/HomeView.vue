@@ -15,7 +15,7 @@ const filter = ref<'all' | Status>('all')
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/db.json') // วางไฟล์ไว้ public/api/db.json
+    const res = await fetch('/api/db.json', { cache: 'force-cache' }) // วางไฟล์ไว้ public/api/db.json
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     db.value = await res.json()
   } catch (e: any) {

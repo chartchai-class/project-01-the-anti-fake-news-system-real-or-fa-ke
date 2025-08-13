@@ -18,7 +18,7 @@ defineProps<{
       <li v-for="c in comments" :key="c.id" class="border border-slate-200 rounded-lg p-3 bg-slate-50 dark:border-slate-700 dark:bg-slate-900/50 sm:p-4">
         <strong>{{ c.username }}</strong>
         <p class="text-slate-700 dark:text-slate-300">{{ c.comment || c.text }}</p>
-        <img v-if="c.imageUrl" :src="c.imageUrl" alt="News Image" class="max-w-full rounded-xl my-2 sm:my-3" />
+        <img v-if="c.imageUrl" :src="c.imageUrl" alt="News Image" class="max-w-full rounded-xl my-2 sm:my-3" loading="lazy" decoding="async" fetchpriority="low" sizes="100vw" />
         <small class="text-slate-500 dark:text-slate-400">{{ c.createdAt }}</small>
       </li>
     </ul>

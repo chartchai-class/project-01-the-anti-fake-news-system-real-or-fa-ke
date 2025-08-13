@@ -29,6 +29,10 @@ onMounted(async () => {
       :src="news.imageUrl"
       alt="News Image"
       class="max-w-full rounded-xl mb-4"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="low"
+      sizes="100vw"
     />
 
     <p>{{ news.fullDetail }}</p>
