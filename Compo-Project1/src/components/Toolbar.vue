@@ -21,7 +21,7 @@ const filterProxy = computed({
 </script>
 
 <template>
-  <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+  <div class="flex flex-wrap items-center justify-between gap-3 mb-4 mx-auto max-w-lg">
     <label class="inline-flex items-center gap-2">
       <span class="text-slate-600">Show per page</span>
       <div class="relative">

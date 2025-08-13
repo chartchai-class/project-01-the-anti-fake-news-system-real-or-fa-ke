@@ -43,7 +43,7 @@ const paginatedNews = computed<NewsItem[]>(() => {
 
 <template>
   <section>
-    <h1 class="text-xl font-semibold mb-4">Social Anti‑Fake News</h1>
+    <h1 class="text-xl font-semibold mb-4 mx-auto max-w-[1200px]">Social Anti‑Fake News</h1>
 
     <!-- Toolbar -->
     <Toolbar v-model:perPage="perPage" v-model:filter="filter" />
@@ -54,7 +54,9 @@ const paginatedNews = computed<NewsItem[]>(() => {
     <div v-else-if="filteredNews.length === 0" class="text-slate-500">No news found.</div>
 
     <!-- ใช้คอมโพเนนต์รายการ (ตัด all-comments ออก) -->
-    <NewsList v-else :news="paginatedNews" />
+    <div v-else class="mx-auto w-11/12 md:w-3/4 lg:w-2/3">
+      <NewsList :news="paginatedNews" />
+    </div>
 
     <!-- Pagination -->
     <Pagination

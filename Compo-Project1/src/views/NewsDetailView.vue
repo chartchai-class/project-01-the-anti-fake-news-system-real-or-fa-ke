@@ -15,7 +15,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <article v-if="news" class="detail">
+  <section v-if="news" class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 detail">
     <h2>{{ news.topic }}</h2>
 
     <p class="meta">
@@ -42,7 +42,7 @@ onMounted(async () => {
         View comments & votes
       </RouterLink>
     </div>
-  </article>
+  </section>
 </template>
 
 <style scoped>

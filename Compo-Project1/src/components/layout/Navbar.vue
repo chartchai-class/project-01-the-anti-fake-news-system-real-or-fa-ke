@@ -13,7 +13,7 @@ function toggleTheme () {
 <template>
   <header class="w-full px-4 py-3 grid grid-cols-[1fr,auto,1fr] items-center gap-3">
     <RouterLink :to="{ name: 'news-list' }" class="justify-self-start inline-flex items-center rounded-xl bg-blue-50 px-2 py-1 font-extrabold text-blue-600 dark:bg-slate-800 dark:text-blue-300">
-      Anti‑Fake
+      Anti‑Fake News
     </RouterLink>
     <nav class="flex items-center justify-center gap-2">
       <RouterLink :to="{ name: 'news-list' }" class="px-3 py-1.5 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800"
