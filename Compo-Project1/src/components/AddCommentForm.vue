@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const props = defineProps<{
-  onSubmit?: (payload: { username: string; text: string; link: string; vote: 'fake' | 'not_fake' | null }) => void
-}>()
 const emit = defineEmits<{ (e: 'submit', payload: { username: string; text: string; link: string; vote: 'fake' | 'not_fake' | null }): void }>()
 
 const username = ref('')
 const text = ref('')
 const link = ref('')
 const selectedVote = ref<'fake' | 'not_fake' | null>(null)
+const isPosting = ref(false)
 
 function handleSubmit() {
+  if (isPosting.value) return
   if (!text.value && !link.value) return
+  isPosting.value = true
   const payload = {
     username: username.value,
     text: text.value,
@@ -20,11 +20,11 @@ function handleSubmit() {
     vote: selectedVote.value,
   }
   emit('submit', payload)
-  props.onSubmit?.(payload)
   username.value = ''
   text.value = ''
   link.value = ''
   selectedVote.value = null
+  isPosting.value = false
 }
 </script>
 

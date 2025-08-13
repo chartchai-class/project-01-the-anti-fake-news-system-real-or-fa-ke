@@ -9,6 +9,7 @@ const route = useRoute()
 const newsId = Number(route.params.id)
 
 const votes = ref({ fake: 0, notFake: 0 })
+const hasVoted = ref(false)
 const comments = ref<any[]>([])
 
 // โหลด mock data จาก /api/db.json
@@ -32,17 +33,24 @@ onMounted(async () => {
 })
 
 function handleVoteFake() {
+  if (hasVoted.value) return
   votes.value.fake++
+  hasVoted.value = true
 }
 function handleVoteNotFake() {
+  if (hasVoted.value) return
   votes.value.notFake++
+  hasVoted.value = true
 }
 
 function handleAddComment(payload: { username: string; text: string; link: string; vote: 'fake' | 'not_fake' | null }) {
   if (!payload.text && !payload.link) return
 
-  if (payload.vote === 'fake') votes.value.fake++
-  if (payload.vote === 'not_fake') votes.value.notFake++
+  if (!hasVoted.value) {
+    if (payload.vote === 'fake') votes.value.fake++
+    if (payload.vote === 'not_fake') votes.value.notFake++
+    hasVoted.value = true
+  }
 
   comments.value.unshift({
     id: Date.now(),
@@ -57,7 +65,7 @@ function handleAddComment(payload: { username: string; text: string; link: strin
 
 <template>
   <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100">
-    <VotesPanel :votes="votes" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
+    <VotesPanel :votes="votes" :disabled="hasVoted" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
 
     <AddCommentForm @submit="handleAddComment" />
 

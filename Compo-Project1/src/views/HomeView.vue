@@ -27,8 +27,14 @@ onMounted(async () => {
 
 watch([filter, perPage], () => (currentPage.value = 1))
 
+function normalizeStatus(value: unknown): string {
+  return String(value ?? '').replace(/[_-]/g, '').toLowerCase()
+}
+
 const filteredNews = computed<NewsItem[]>(() =>
-  filter.value === 'all' ? db.value.news : db.value.news.filter(n => n.status === filter.value)
+  filter.value === 'all'
+    ? db.value.news
+    : db.value.news.filter(n => normalizeStatus(n.status) === normalizeStatus(filter.value))
 )
 
 const totalPages = computed(() =>
