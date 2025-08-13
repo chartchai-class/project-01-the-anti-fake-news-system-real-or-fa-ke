@@ -14,7 +14,7 @@ const comments = ref<any[]>([])
 
 // โหลด mock data จาก /api/db.json
 onMounted(async () => {
-  const res = await fetch('/api/db.json')
+  const res = await fetch('/api/db.json', { cache: 'force-cache' })
   const db = await res.json()
 
   const id = Number(route.params.id)
