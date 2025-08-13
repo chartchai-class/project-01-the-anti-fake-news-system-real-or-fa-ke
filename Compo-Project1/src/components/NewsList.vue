@@ -18,9 +18,16 @@ const props = withDefaults(defineProps<{ news: NewsItem[] }>(), {
 })
 
 function statusClasses(s: Status) {
-  return s === 'fake'
+  return (s as string) === 'fake'
     ? 'bg-red-50 text-red-700 ring-1 ring-red-200 px-1 rounded dark:bg-red-900/30 dark:text-red-300 dark:ring-red-800'
     : 'bg-green-50 text-green-700 ring-1 ring-green-200 px-1 rounded dark:bg-green-900/30 dark:text-green-300 dark:ring-green-800'
+}
+
+function statusLabel(s: unknown): string {
+  const normalized = String(s ?? '').replace(/[_-]/g, '').toLowerCase()
+  if (normalized === 'fake') return 'Fake'
+  if (normalized === 'notfake') return 'Not Fake'
+  return String(s ?? '')
 }
 </script>
 
@@ -40,7 +47,7 @@ function statusClasses(s: Status) {
           Reporter: {{ item.reporterName || item.reporter || '—' }}
         </div>
         <div class="mt-1 text-sm">
-          Status: <em :class="statusClasses(item.status)">{{ item.status }}</em>
+          Status: <em :class="statusClasses(item.status)">{{ statusLabel(item.status) }}</em>
         </div>
         <div class="mt-2 text-xs text-slate-500 dark:text-slate-400">
           Votes: Fake {{ item.votes?.fake ?? '-' }}, Not Fake {{ item.votes?.notFake ?? '-' }}
