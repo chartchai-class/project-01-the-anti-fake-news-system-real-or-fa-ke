@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { getDB } from '@/service/api'
 import { useRoute, RouterLink } from 'vue-router'
 
 const route = useRoute()
 const news = ref<any | null>(null)
 
 onMounted(async () => {
-  const res = await fetch('/api/db.json', { cache: 'force-cache' })
-  const db = await res.json()
+  const db = await getDB()
 
   const id = Number(route.params.id)
   news.value = db.news.find((n: any) => n.id === id)

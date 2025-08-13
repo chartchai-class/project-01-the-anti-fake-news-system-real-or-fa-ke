@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { getDB } from '@/service/api'
 import VotesPanel from '@/components/VotesPanel.vue'
 import AddCommentForm from '@/components/AddCommentForm.vue'
 import CommentsList from '@/components/CommentsList.vue'
@@ -14,8 +15,7 @@ const comments = ref<any[]>([])
 
 // โหลด mock data จาก /api/db.json
 onMounted(async () => {
-  const res = await fetch('/api/db.json', { cache: 'force-cache' })
-  const db = await res.json()
+  const db = await getDB()
 
   const id = Number(route.params.id)
 
@@ -57,7 +57,8 @@ function handleAddComment(payload: { username: string; text: string; link: strin
     newsId,
     username: payload.username,
     vote: payload.vote,
-    text: payload.text ? payload.text : `(image) ${payload.link}`,
+    text: (payload.text || '').trim(),
+    imageUrl: (payload.link || '').trim(),
     createdAt: new Date().toLocaleString(),
   })
 }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
+import { getDB } from '@/service/api'
 import NewsList from '@/components/NewsList.vue'
 import Toolbar from '@/components/Toolbar.vue'
 import Pagination from '@/components/Pagination.vue'
@@ -15,9 +16,7 @@ const filter = ref<'all' | Status>('all')
 
 onMounted(async () => {
   try {
-    const res = await fetch('/api/db.json', { cache: 'force-cache' }) // วางไฟล์ไว้ public/api/db.json
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    db.value = await res.json()
+    db.value = await getDB()
   } catch (e: any) {
     errorMsg.value = e?.message ?? 'Load failed'
   } finally {

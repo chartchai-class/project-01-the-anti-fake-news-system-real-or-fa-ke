@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { getDeveloper } from '@/service/api'
 
 const developer = ref<any[]>([])
 
 onMounted(async () => {
-  const res = await fetch('/api/db.json')
-  const db = await res.json()
-  developer.value = db.developer || []
+  developer.value = await getDeveloper()
 })
 </script>
 
