@@ -11,66 +11,23 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="page">
-    <h1>Developer</h1>
-    <p class="intro">
+  <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3">
+    <h1 class="text-2xl mb-3 text-green-600">Developer</h1>
+    <p class="mb-6 text-[1.1rem] text-slate-600">
       This application empowers the community to work together in identifying and flagging potential fake news by sharing votes, evidence, and constructive comments.
     </p>
 
-    <div class="dev-list">
-      <div v-for="dev in developer" :key="dev.id" class="dev-card">
-        <h2>{{ dev.name }}</h2>
-        <h3>{{ dev.code }}</h3>
-        <p>{{ dev.description }}</p>
+    <div class="grid [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))] gap-4">
+      <div
+        v-for="dev in developer"
+        :key="dev.id"
+        class="border border-slate-200 rounded-xl p-4 bg-white transition-shadow hover:shadow"
+      >
+        <h2 class="mb-1 text-xl">{{ dev.name }}</h2>
+        <h3 class="mb-2 text-base font-medium text-slate-500">{{ dev.code }}</h3>
+        <p class="text-[0.95rem] text-slate-700">{{ dev.description }}</p>
       </div>
     </div>
   </section>
+  
 </template>
-
-<style scoped>
-.page {
-  max-width: 900px;
-  margin: 24px auto;
-  padding: 0 16px;
-}
-h1 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  color: #2563eb;
-}
-.intro {
-  margin-bottom: 24px;
-  font-size: 1.1rem;
-  color: #4b5563;
-}
-.dev-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-.dev-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-  background: #fff;
-  transition: box-shadow 0.2s;
-}
-.dev-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-.dev-card h2 {
-  margin: 0 0 4px;
-  font-size: 1.25rem;
-}
-.dev-card h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #6b7280;
-}
-.dev-card p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: #374151;
-}
-</style>

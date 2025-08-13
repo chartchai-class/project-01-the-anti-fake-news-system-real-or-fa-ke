@@ -15,10 +15,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section v-if="news" class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 detail">
+  <section v-if="news" class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4">
     <h2>{{ news.topic }}</h2>
 
-    <p class="meta">
+    <p class="text-slate-500 mb-3">
       <span>Status: <strong>{{ news.status }}</strong></span> •
       <span>Reporter: {{ news.reporterName }}</span> •
       <span>Date:{{ news.reportedAt }}</span>
@@ -28,44 +28,19 @@ onMounted(async () => {
       v-if="news.imageUrl"
       :src="news.imageUrl"
       alt="News Image"
-      class="news-image"
+      class="max-w-full rounded-xl mb-4"
     />
 
     <p>{{ news.fullDetail }}</p>
 
     <p v-if="news.imageUrl">
-      <strong>Image link:</strong> <a :href="news.imageUrl" target="_blank" rel="noopener">Open</a>
+      <strong>Image link:</strong> <a :href="news.imageUrl" target="_blank" rel="noopener" class="no-underline">Open</a>
     </p>
 
-    <div class="actions">
+    <div class="mt-4">
       <RouterLink :to="{ name: 'news-discussion', params: { id: news.id } }">
         View comments & votes
       </RouterLink>
     </div>
   </section>
 </template>
-
-<style scoped>
-.detail {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-}
-.meta {
-  color: #6b7280;
-  margin-bottom: 12px;
-}
-.news-image {
-  max-width: 100%;
-  border-radius: 12px;
-  margin-bottom: 16px;
-}
-.actions {
-  margin-top: 16px;
-}
-a {
-  text-decoration: none;
-  color: #2563eb;
-}
-</style>

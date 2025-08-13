@@ -13,38 +13,17 @@ defineProps<{
 
 <template>
   <div>
-    <h3 style="margin-top: 16px">Comments</h3>
-    <ul class="clist">
-      <li v-for="c in comments" :key="c.id">
+    <h3 class="mt-4">Comments</h3>
+    <ul class="list-none p-0 grid gap-2 mt-2">
+      <li v-for="c in comments" :key="c.id" class="border border-slate-200 rounded-lg p-3 bg-slate-50">
         <strong>{{ c.username }}</strong>
         <p>{{ c.comment || c.text }}</p>
-        <img v-if="c.imageUrl" :src="c.imageUrl" alt="News Image" class="news-image" />
+        <img v-if="c.imageUrl" :src="c.imageUrl" alt="News Image" class="max-w-full rounded-xl my-2" />
         <small>{{ c.createdAt }}</small>
       </li>
     </ul>
   </div>
   
 </template>
-
-<style scoped>
-.clist {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-  margin-top: 8px;
-}
-.clist li {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 10px;
-  background: #fafafa;
-}
-.news-image {
-  max-width: 100%;
-  border-radius: 12px;
-  margin: 8px 0;
-}
-</style>
 
 

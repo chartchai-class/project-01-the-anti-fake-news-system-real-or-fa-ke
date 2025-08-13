@@ -56,7 +56,7 @@ function handleAddComment(payload: { username: string; text: string; link: strin
 </script>
 
 <template>
-  <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 discussion">
+  <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4">
     <VotesPanel :votes="votes" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
 
     <AddCommentForm @submit="handleAddComment" />
@@ -64,60 +64,3 @@ function handleAddComment(payload: { username: string; text: string; link: strin
     <CommentsList :comments="comments" />
   </section>
 </template>
-
-<style scoped>
-.discussion {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 16px;
-}
-.vote-panel {
-  display: flex;
-  gap: 8px;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.row {
-  display: grid;
-  gap: 8px;
-}
-.row:first-child {
-  grid-template-columns: 1fr; /* แถวบนมีช่องเดียวเต็มแถว */
-}
-.row:last-child {
-  grid-template-columns: 1fr 1fr auto; /* คอมเมนต์ + URL + ปุ่ม */
-}
-.clist {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-  margin-top: 8px;
-}
-.clist li {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 10px;
-  background: #fafafa;
-}
-.pagination {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 14px;
-}
-input,
-button {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-}
-button {
-  cursor: pointer;
-}
-</style>

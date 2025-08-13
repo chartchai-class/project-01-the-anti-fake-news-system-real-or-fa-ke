@@ -30,45 +30,19 @@ function handleSubmit() {
 
 <template>
   <div>
-    <h3 style="margin-top: 16px">Add your comment / image URL</h3>
-    <div class="form">
-      <div class="row">
-        <input v-model="username" type="text" placeholder="Your UserName" />
+    <h3 class="mt-4">Add your comment / image URL</h3>
+    <div class="flex flex-col gap-2">
+      <div class="grid gap-2">
+        <input v-model="username" type="text" placeholder="Your UserName" class="px-3 py-2 rounded-lg border border-slate-200" />
       </div>
-      <div class="row">
-        <input v-model="text" type="text" placeholder="Your comment..." />
-        <input v-model="link" type="url" placeholder="Image URL (optional)" />
-        <button @click="handleSubmit">Post</button>
+      <div class="grid gap-2 [grid-template-columns:1fr_1fr_auto]">
+        <input v-model="text" type="text" placeholder="Your comment..." class="px-3 py-2 rounded-lg border border-slate-200" />
+        <input v-model="link" type="url" placeholder="Image URL (optional)" class="px-3 py-2 rounded-lg border border-slate-200" />
+        <button @click="handleSubmit" class="px-3 py-2 rounded-lg border border-slate-200">Post</button>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.row {
-  display: grid;
-  gap: 8px;
-}
-.row:first-child {
-  grid-template-columns: 1fr;
-}
-.row:last-child {
-  grid-template-columns: 1fr 1fr auto;
-}
-input,
-button {
-  padding: 8px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-}
-button {
-  cursor: pointer;
-}
-</style>
 
 

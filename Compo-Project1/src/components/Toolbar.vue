@@ -39,18 +39,18 @@ const filterProxy = computed({
 
     <div class="flex items-center gap-2">
       <button
-        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-blue-50"
-        :class="filterProxy==='all' ? 'bg-blue-600 text-white border-blue-600' : 'border-slate-200'"
+        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50"
+        :class="filterProxy==='all' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200'"
         @click="filterProxy = 'all'"
       >All</button>
       <button
-        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-blue-50"
-        :class="filterProxy==='fake' ? 'bg-blue-600 text-white border-blue-600' : 'border-slate-200'"
+        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50"
+        :class="filterProxy==='fake' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200'"
         @click="filterProxy = 'fake'"
       >Fake</button>
       <button
-        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-blue-50"
-        :class="filterProxy==='not-fake' ? 'bg-blue-600 text-white border-blue-600' : 'border-slate-200'"
+        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50"
+        :class="filterProxy==='not-fake' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200'"
         @click="filterProxy = 'not-fake'"
       >Not Fake</button>
     </div>

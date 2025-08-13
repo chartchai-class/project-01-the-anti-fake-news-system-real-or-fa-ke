@@ -1,25 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="detail-layout">
-    <header class="detail-header">
+  <section class="max-w-[960px] mx-auto my-6 px-4">
+    <header class="mb-4">
       <RouterLink :to="{ name: 'news-list' }">← Back to News</RouterLink>
     </header>
 
     <RouterView />
   </section>
 </template>
-
-<style scoped>
-.detail-layout {
-  max-width: 960px;
-  margin: 24px auto;
-  padding: 0 16px;
-}
-.detail-header {
-  margin-bottom: 16px;
-}
-a {
-  text-decoration: none;
-}
-</style>
