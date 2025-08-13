@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import VotesPanel from '@/components/VotesPanel.vue'
+import AddCommentForm from '@/components/AddCommentForm.vue'
+import CommentsList from '@/components/CommentsList.vue'
 
 const route = useRoute()
 const newsId = Number(route.params.id)
 
 const votes = ref({ fake: 0, notFake: 0 })
 const comments = ref<any[]>([])
-const link = ref('')
-const text = ref('')
 
 // โหลด mock data จาก /api/db.json
 onMounted(async () => {
@@ -30,76 +31,37 @@ onMounted(async () => {
   )
 })
 
-// โหวตแบบ frontend-only
-function voteFake() {
+function handleVoteFake() {
   votes.value.fake++
 }
-function voteNotFake() {
+function handleVoteNotFake() {
   votes.value.notFake++
 }
 
-// เพิ่มคอมเมนต์ใหม่
-const username = ref('')
-const selectedVote = ref<'fake' | 'not_fake' | null>(null)
+function handleAddComment(payload: { username: string; text: string; link: string; vote: 'fake' | 'not_fake' | null }) {
+  if (!payload.text && !payload.link) return
 
-function addComment() {
-  if (!text.value && !link.value) return
-
-  // ถ้ามี vote ก็เพิ่ม count
-  if (selectedVote.value === 'fake') votes.value.fake++
-  if (selectedVote.value === 'not_fake') votes.value.notFake++
+  if (payload.vote === 'fake') votes.value.fake++
+  if (payload.vote === 'not_fake') votes.value.notFake++
 
   comments.value.unshift({
     id: Date.now(),
     newsId,
-    username: username.value,
-    vote: selectedVote.value,
-    text: text.value ? text.value : `(image) ${link.value}`,
+    username: payload.username,
+    vote: payload.vote,
+    text: payload.text ? payload.text : `(image) ${payload.link}`,
     createdAt: new Date().toLocaleString(),
   })
-
-  username.value = ''
-  text.value = ''
-  link.value = ''
-  selectedVote.value = null
-  link.value = ''
 }
 </script>
 
 <template>
   <section class="discussion">
-    <h3>Votes</h3>
-    <div class="vote-panel">
-      <button @click="voteFake">Fake ({{ votes.fake }})</button>
-      <button @click="voteNotFake">Not Fake ({{ votes.notFake }})</button>
-    </div>
+    <VotesPanel :votes="votes" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
 
-    <h3 style="margin-top: 16px">Add your comment / image URL</h3>
-<div class="form">
-  <div class="row">
-    <input v-model="username" type="text" placeholder="Your UserName" />
-  </div>
-  <div class="row">
-    <input v-model="text" type="text" placeholder="Your comment..." />
-    <input v-model="link" type="url" placeholder="Image URL (optional)" />
-    <button @click="addComment">Post</button>
-  </div>
-</div>
+    <AddCommentForm @submit="handleAddComment" />
 
-    <h3 style="margin-top: 16px">Comments</h3>
-    <ul class="clist">
-      <li v-for="c in comments" :key="c.id">
-        <strong>{{ c.username }}</strong>
-        <p>{{ c.comment }}</p>
-        <img
-      v-if="c.imageUrl"
-      :src="c.imageUrl"
-      alt="News Image"
-      class="news-image"
-    />
-        <small>{{ c.createdAt }}</small>
-      </li>
-    </ul>
+    <CommentsList :comments="comments" />
   </section>
 </template>
 
