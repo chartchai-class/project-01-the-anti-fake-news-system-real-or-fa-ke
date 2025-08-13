@@ -6,7 +6,7 @@ const route = useRoute()
 const news = ref<any | null>(null)
 
 onMounted(async () => {
-  const res = await fetch('/api/db.json')
+  const res = await fetch('/api/db.json', { cache: 'force-cache' })
   const db = await res.json()
 
   const id = Number(route.params.id)
