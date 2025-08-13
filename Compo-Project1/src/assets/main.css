@@ -12,6 +12,37 @@
   font-weight: normal;
 }
 
+/* Media defaults */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve focus visibility */
+:focus-visible {
+  outline: 2px dashed #22c55e; /* green-500 */
+  outline-offset: 2px;
+}
+html.dark :focus-visible {
+  outline-color: #86efac; /* green-200 */
+}
+
+/* Better text selection */
+::selection {
+  background-color: #dcfce7; /* green-100 */
+  color: #14532d; /* green-900 */
+}
+html.dark ::selection {
+  background-color: #14532d; /* green-900 */
+  color: #ecfdf5; /* green-50 */
+}
+
+/* Hint to browser to skip rendering off-screen lazy images */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
 a,
 .green {
   text-decoration: none;
@@ -36,5 +67,15 @@ a,
     display: block;
     grid-template-columns: initial;
     padding: 0;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
