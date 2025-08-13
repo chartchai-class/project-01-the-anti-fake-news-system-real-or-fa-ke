@@ -56,7 +56,7 @@ function handleAddComment(payload: { username: string; text: string; link: strin
 </script>
 
 <template>
-  <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4">
+  <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100">
     <VotesPanel :votes="votes" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
 
     <AddCommentForm @submit="handleAddComment" />

@@ -19,8 +19,8 @@ const props = withDefaults(defineProps<{ news: NewsItem[] }>(), {
 
 function statusClasses(s: Status) {
   return s === 'fake'
-    ? 'bg-red-50 text-red-700 ring-1 ring-red-200 px-1 rounded'
-    : 'bg-green-50 text-green-700 ring-1 ring-green-200 px-1 rounded'
+    ? 'bg-red-50 text-red-700 ring-1 ring-red-200 px-1 rounded dark:bg-red-900/30 dark:text-red-300 dark:ring-red-800'
+    : 'bg-green-50 text-green-700 ring-1 ring-green-200 px-1 rounded dark:bg-green-900/30 dark:text-green-300 dark:ring-green-800'
 }
 </script>
 
@@ -29,24 +29,24 @@ function statusClasses(s: Status) {
     <li v-for="item in props.news" :key="item.id">
       <RouterLink
         :to="{ name: 'news-detail', params: { id: item.id } }"
-        class="block rounded-xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow transition
-               focus:outline-none focus:ring-2 focus:ring-blue-400"
+        class="block rounded-xl border border-slate-200 bg-white p-3 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-400
+               hover:shadow hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
       >
         <img v-if="item.imageUrl" :src="item.imageUrl" alt="" class="mb-2 h-40 w-full rounded-lg object-cover" loading="lazy" />
         <strong class="block text-base leading-snug line-clamp-2">{{ item.topic }}</strong>
-        <span class="mt-1 block text-sm text-slate-600 line-clamp-3">{{ item.shortDetail }}</span>
+        <span class="mt-1 block text-sm text-slate-600 line-clamp-3 dark:text-slate-300">{{ item.shortDetail }}</span>
 
-        <div class="mt-2 text-sm text-slate-600">
+        <div class="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Reporter: {{ item.reporterName || item.reporter || '—' }}
         </div>
         <div class="mt-1 text-sm">
           Status: <em :class="statusClasses(item.status)">{{ item.status }}</em>
         </div>
-        <div class="mt-2 text-xs text-slate-500">
+        <div class="mt-2 text-xs text-slate-500 dark:text-slate-400">
           Votes: Fake {{ item.votes?.fake ?? '-' }}, Not Fake {{ item.votes?.notFake ?? '-' }}
         </div>
 
-        <span class="mt-2 inline-block text-sm text-green-600">View details</span>
+        <span class="mt-2 inline-block text-sm text-green-600 dark:text-green-400">View details</span>
       </RouterLink>
     </li>
   </ul>

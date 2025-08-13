@@ -33,12 +33,12 @@ function handleSubmit() {
     <h3 class="mt-4">Add your comment / image URL</h3>
     <div class="flex flex-col gap-2">
       <div class="grid gap-2">
-        <input v-model="username" type="text" placeholder="Your UserName" class="px-3 py-2 rounded-lg border border-slate-200" />
+        <input v-model="username" type="text" placeholder="Your UserName" class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" />
       </div>
       <div class="grid gap-2 [grid-template-columns:1fr_1fr_auto]">
-        <input v-model="text" type="text" placeholder="Your comment..." class="px-3 py-2 rounded-lg border border-slate-200" />
-        <input v-model="link" type="url" placeholder="Image URL (optional)" class="px-3 py-2 rounded-lg border border-slate-200" />
-        <button @click="handleSubmit" class="px-3 py-2 rounded-lg border border-slate-200">Post</button>
+        <input v-model="text" type="text" placeholder="Your comment..." class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" />
+        <input v-model="link" type="url" placeholder="Image URL (optional)" class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" />
+        <button @click="handleSubmit" class="px-3 py-2 rounded-lg border border-slate-200 hover:bg-slate-50 dark:border-slate-700 dark:hover:bg-slate-800">Post</button>
       </div>
     </div>
   </div>

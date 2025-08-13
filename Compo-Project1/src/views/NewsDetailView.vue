@@ -15,10 +15,10 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section v-if="news" class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4">
+  <section v-if="news" class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100">
     <h2>{{ news.topic }}</h2>
 
-    <p class="text-slate-500 mb-3">
+    <p class="text-slate-500 mb-3 dark:text-slate-400">
       <span>Status: <strong>{{ news.status }}</strong></span> •
       <span>Reporter: {{ news.reporterName }}</span> •
       <span>Date:{{ news.reportedAt }}</span>

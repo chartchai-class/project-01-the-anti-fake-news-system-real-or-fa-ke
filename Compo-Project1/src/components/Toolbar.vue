@@ -23,11 +23,11 @@ const filterProxy = computed({
 <template>
   <div class="flex flex-wrap items-center justify-between gap-3 mb-4 mx-auto max-w-lg">
     <label class="inline-flex items-center gap-2">
-      <span class="text-slate-600">Show per page</span>
+      <span class="text-slate-600 dark:text-slate-300">Show per page</span>
       <div class="relative">
         <select
           v-model.number="perPageProxy"
-          class="rounded-md border border-slate-200 bg-white px-3 py-1.5 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          class="rounded-md border border-slate-200 bg-white px-3 py-1.5 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
         >
           <option :value="6">6</option>
           <option :value="10">10</option>
@@ -39,18 +39,18 @@ const filterProxy = computed({
 
     <div class="flex items-center gap-2">
       <button
-        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50"
-        :class="filterProxy==='all' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200'"
+        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50 dark:hover:bg-slate-800 dark:border-slate-700"
+        :class="filterProxy==='all' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200 dark:border-slate-700'"
         @click="filterProxy = 'all'"
       >All</button>
       <button
-        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50"
-        :class="filterProxy==='fake' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200'"
+        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50 dark:hover:bg-slate-800 dark:border-slate-700"
+        :class="filterProxy==='fake' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200 dark:border-slate-700'"
         @click="filterProxy = 'fake'"
       >Fake</button>
       <button
-        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50"
-        :class="filterProxy==='not-fake' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200'"
+        class="px-2.5 py-1.5 text-sm rounded-md border transition hover:bg-green-50 dark:hover:bg-slate-800 dark:border-slate-700"
+        :class="filterProxy==='not-fake' ? 'bg-green-600 text-white border-green-600' : 'border-slate-200 dark:border-slate-700'"
         @click="filterProxy = 'not-fake'"
       >Not Fake</button>
     </div>
