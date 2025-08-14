@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -42,4 +44,21 @@ const router = createRouter({
   routes,
 })
 
+router.beforeEach((to, from, next) => {
+  NProgress.start()
+  next()
+})
+
+router.afterEach(() => {
+  NProgress.done()
+})
+
+NProgress.configure({
+  showSpinner: false,      // Hide the default spinner
+  trickleSpeed: 200,      // Speed of progress bar trickle
+  minimum: 0.1            // Minimum percentage shown
+})
+
+// Custom NProgress bar style
+import '@/assets/nprogress-custom.css'
 export default router

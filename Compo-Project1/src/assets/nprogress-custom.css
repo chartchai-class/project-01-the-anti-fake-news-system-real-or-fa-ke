@@ -1,0 +1,24 @@
+/* NProgress bar styled with Tailwind colors and sizing */
+#nprogress .bar {
+    @apply bg-green-500 h-1 !important;
+}
+#nprogress .peg {
+    box-shadow: 0 0 10px #22c55e, 0 0 5px #22c55e !important;
+}
+
+/* Centered spinner styles using Tailwind utilities */
+#nprogress .spinner {
+    @apply fixed left-1/2 top-1/2 z-[1031] block !important;
+    transform: translate(-50%, -50%);
+}
+
+#nprogress .spinner-icon {
+    @apply w-6 h-6 box-border border-4 border-green-500 rounded-full;
+    border-top-color: transparent;
+    animation: nprogress-spinner 0.6s linear infinite;
+}
+
+@keyframes nprogress-spinner {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -33,7 +33,7 @@ function statusLabel(s: unknown): string {
 
 <template>
   <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-    <li v-for="item in props.news" :key="item.id">
+  <li v-for="item in props.news" :key="item.id" class="group">
       <RouterLink
         :to="{ name: 'news-detail', params: { id: item.id } }"
         class="block rounded-xl border border-slate-200 bg-white p-3 shadow-sm transition focus:outline-none focus:ring-2 focus:ring-blue-400
@@ -53,14 +53,27 @@ function statusLabel(s: unknown): string {
         <span class="mt-1 block text-sm text-slate-600 line-clamp-3 dark:text-slate-300">{{ item.shortDetail }}</span>
 
         <div class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-          Reporter: {{ item.reporterName || item.reporter || '—' }}
-        </div>
-        <div class="mt-1 text-sm">
-          Status: <em :class="statusClasses(item.status)">{{ statusLabel(item.status) }}</em>
-        </div>
-        <div class="mt-2 text-xs text-slate-500 dark:text-slate-400">
-          Votes: Fake {{ item.votes?.fake ?? '-' }}, Not Fake {{ item.votes?.notFake ?? '-' }}
-        </div>
+            Reporter: {{ item.reporterName || item.reporter || '—' }}
+          </div>
+          <div class="mt-1 text-sm">
+            Status: <em :class="statusClasses(item.status)">{{ statusLabel(item.status) }}</em>
+          </div>
+          <div class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+            Votes: Fake {{ item.votes?.fake ?? '-' }}, Not Fake {{ item.votes?.notFake ?? '-' }}
+            <div class="w-full h-2 mt-1 bg-slate-200 rounded overflow-hidden flex dark:bg-slate-700">
+              <div
+                v-if="item.votes && (item.votes.fake + item.votes.notFake) > 0"
+                class="h-full bg-red-400 dark:bg-red-600 transition-all duration-300 group-hover:scale-y-125"
+                :style="{ width: ((item.votes.fake / (item.votes.fake + item.votes.notFake)) * 100) + '%' }"
+              ></div>
+              <div
+                v-if="item.votes && (item.votes.fake + item.votes.notFake) > 0"
+                class="h-full bg-green-400 dark:bg-green-600 transition-all duration-300 group-hover:scale-y-125"
+                :style="{ width: ((item.votes.notFake / (item.votes.fake + item.votes.notFake)) * 100) + '%' }"
+              ></div>
+              <div v-else class="h-full bg-slate-300 dark:bg-slate-800 w-full transition-all duration-300 group-hover:scale-y-125"></div>
+            </div>
+          </div>
       </RouterLink>
     </li>
   </ul>

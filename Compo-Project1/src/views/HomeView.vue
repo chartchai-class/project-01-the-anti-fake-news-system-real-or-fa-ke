@@ -6,6 +6,8 @@ import Toolbar from '@/components/Toolbar.vue'
 import Pagination from '@/components/Pagination.vue'
 import type { Status, NewsItem, DB } from '@/types'  // ✅ ใช้ type กลาง
 import Sreachbar from '@/components/SreachBar.vue'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 const db = ref<DB>({ news: [], comments: [] })
 const loading = ref(true)
@@ -16,15 +18,21 @@ const currentPage = ref(1)
 const filter = ref<'all' | Status>('all')
 const q = ref('')
 
-onMounted(async () => {
+onMounted(loadData)
+
+async function loadData() {
+  NProgress.start()
+  loading.value = true
+  errorMsg.value = null
   try {
     db.value = await getDB()
-  } catch (e: any) {
-    errorMsg.value = e?.message ?? 'Load failed'
+  } catch (e) {
+    errorMsg.value = (e as Error)?.message ?? 'Load failed'
   } finally {
     loading.value = false
+    NProgress.done()
   }
-})
+}
 
 watch([filter, perPage], () => (currentPage.value = 1))
 
