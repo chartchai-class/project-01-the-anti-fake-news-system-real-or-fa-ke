@@ -5,6 +5,7 @@ import NewsList from '@/components/NewsList.vue'
 import Toolbar from '@/components/Toolbar.vue'
 import Pagination from '@/components/Pagination.vue'
 import type { Status, NewsItem, DB } from '@/types'  // ✅ ใช้ type กลาง
+import Sreachbar from '@/components/Sreachbar.vue'
 
 const db = ref<DB>({ news: [], comments: [] })
 const loading = ref(true)
@@ -13,6 +14,7 @@ const errorMsg = ref<string | null>(null)
 const perPage = ref(6)
 const currentPage = ref(1)
 const filter = ref<'all' | Status>('all')
+const q = ref('')
 
 onMounted(async () => {
   try {
@@ -48,8 +50,11 @@ const paginatedNews = computed<NewsItem[]>(() => {
 
 <template>
   <section>
-    <h1 class="text-xl font-semibold mb-4 mx-auto max-w-[1200px]">Social Anti‑Fake News</h1>
+    <h1 class="text-xl font-semibold mb-4 mx-auto max-w-[1250px]">Social Anti‑Fake News</h1>
 
+    <!-- Sreachbar -->
+    <Sreachbar v-model="q" @select="item => $router.push({ name: 'news-detail', params: { id: item.id } })" />
+      
     <!-- Toolbar -->
     <Toolbar v-model:perPage="perPage" v-model:filter="filter" />
 
