@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { getDB } from '@/service/api'
+import { saveInteraction, getInteractions } from '@/service/localStorage'
 import VotesPanel from '@/components/VotesPanel.vue'
 import AddCommentForm from '@/components/AddCommentForm.vue'
 import CommentsList from '@/components/CommentsList.vue'
@@ -16,18 +17,31 @@ const comments = ref<any[]>([])
 // โหลด mock data จาก /api/db.json
 onMounted(async () => {
   const db = await getDB()
-
   const id = Number(route.params.id)
-
   // หาข่าวที่ตรงกับ newsId
   const currentNews = db.news.find((n: any) => n.id === id)
-
   if (currentNews) {
     votes.value = currentNews.votes || { fake: 0, notFake: 0 }
   }
-
+  // Load user votes from localStorage
+  const userVotes = getInteractions('news')
+    .filter(i => i.type === 'vote' && i.payload && (i.payload as any).newsId === newsId)
+    .map(i => i.payload)
+  // Apply user votes
+  userVotes.forEach(v => {
+    const votePayload = v as { vote?: string }
+    if (votePayload.vote === 'fake') votes.value.fake++
+    if (votePayload.vote === 'not_fake') votes.value.notFake++
+    hasVoted.value = true
+  })
+  // Load comments from mock data
   const filteredComments = db.comments.filter((c: any) => c.newsId === newsId)
-  comments.value = filteredComments.sort((a: any, b: any) =>
+  // Load user comments from localStorage
+  const userComments = getInteractions('news')
+    .filter(i => i.type === 'comment' && i.payload && (i.payload as any).newsId === newsId)
+    .map(i => i.payload)
+  // Merge and sort
+  comments.value = [...userComments, ...filteredComments].sort((a: any, b: any) =>
     new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
   )
 })
@@ -36,11 +50,13 @@ function handleVoteFake() {
   if (hasVoted.value) return
   votes.value.fake++
   hasVoted.value = true
+  saveInteraction('news', 'vote', { newsId, vote: 'fake' })
 }
 function handleVoteNotFake() {
   if (hasVoted.value) return
   votes.value.notFake++
   hasVoted.value = true
+  saveInteraction('news', 'vote', { newsId, vote: 'not_fake' })
 }
 
 function handleAddComment(payload: { username: string; text: string; link: string; vote: 'fake' | 'not_fake' | null }) {
@@ -52,7 +68,7 @@ function handleAddComment(payload: { username: string; text: string; link: strin
     hasVoted.value = true
   }
 
-  comments.value.unshift({
+  const comment = {
     id: Date.now(),
     newsId,
     username: payload.username,
@@ -60,7 +76,9 @@ function handleAddComment(payload: { username: string; text: string; link: strin
     text: (payload.text || '').trim(),
     imageUrl: (payload.link || '').trim(),
     createdAt: new Date().toLocaleString(),
-  })
+  }
+  comments.value.unshift(comment)
+  saveInteraction('news', 'comment', comment)
 }
 </script>
 
