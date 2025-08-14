@@ -1,12 +1,33 @@
 <script setup lang="ts">
-const props = defineProps<{ page: number; totalPages: number }>()
-const emit = defineEmits<{ (e: 'update:page', value: number): void }>()
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps({
+  page: {
+    type: Number,
+    required: true
+  },
+  totalPages: {
+    type: Number,
+    required: true
+  }
+})
+
+const emit = defineEmits<{
+  (e: 'update:page', value: number): void
+  (e: 'page-change'): void
+}>()
 
 function goPrev() {
-  if (props.page > 1) emit('update:page', props.page - 1)
+  if (props.page > 1) {
+    emit('update:page', props.page - 1)
+    emit('page-change')
+  }
 }
 function goNext() {
-  if (props.page < props.totalPages) emit('update:page', props.page + 1)
+  if (props.page < props.totalPages) {
+    emit('update:page', props.page + 1)
+    emit('page-change')
+  }
 }
 </script>
 
@@ -14,15 +35,15 @@ function goNext() {
   <nav class="mt-5 flex items-center justify-center gap-3" aria-label="Pagination">
     <button
       class="rounded-md border px-3 py-1.5 text-sm disabled:opacity-40"
-      :disabled="page===1"
+      :disabled="props.page === 1"
       @click="goPrev"
     >« Prev</button>
 
-    <span class="text-sm text-slate-600">Page {{ page }} / {{ totalPages }}</span>
+    <span class="text-sm text-slate-600">Page {{ props.page }} / {{ props.totalPages }}</span>
 
     <button
       class="rounded-md border px-3 py-1.5 text-sm disabled:opacity-40"
-      :disabled="page===totalPages"
+      :disabled="props.page === props.totalPages"
       @click="goNext"
     >Next »</button>
   </nav>
