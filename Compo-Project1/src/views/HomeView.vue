@@ -5,7 +5,7 @@ import NewsList from '@/components/NewsList.vue'
 import Toolbar from '@/components/Toolbar.vue'
 import Pagination from '@/components/Pagination.vue'
 import type { Status, NewsItem, DB } from '@/types'  // ✅ ใช้ type กลาง
-import Sreachbar from '@/components/Sreachbar.vue'
+import Sreachbar from '@/components/SreachBar.vue'
 
 const db = ref<DB>({ news: [], comments: [] })
 const loading = ref(true)
