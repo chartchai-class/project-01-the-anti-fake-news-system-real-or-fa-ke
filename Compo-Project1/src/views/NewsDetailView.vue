@@ -15,13 +15,29 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section v-if="news" class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100">
-    <h2>{{ news.topic }}</h2>
+  <section
+    v-if="news"
+    class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 
+           dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100"
+  >
+    <!-- 🔙 Back to Home -->
+    <div class="mb-4">
+      <RouterLink
+        :to="{ name: 'news-list' }"
+        class="inline-block border border-green-500 text-green-600 dark:text-green-400 
+               rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100 
+               dark:hover:bg-slate-800 transition"
+      >
+        ← Back to Home
+      </RouterLink>
+    </div>
+
+    <h2 class="text-xl font-semibold mb-2">{{ news.topic }}</h2>
 
     <p class="text-slate-500 mb-3 dark:text-slate-400">
       <span>Status: <strong>{{ news.status }}</strong></span> •
       <span>Reporter: {{ news.reporterName }}</span> •
-      <span>Date:{{ news.reportedAt }}</span>
+      <span>Date: {{ news.reportedAt }}</span>
     </p>
 
     <img
@@ -35,14 +51,22 @@ onMounted(async () => {
       sizes="100vw"
     />
 
-    <p>{{ news.fullDetail }}</p>
+    <p class="mb-4">{{ news.fullDetail }}</p>
 
-    <p v-if="news.imageUrl">
-      <strong>Image link:</strong> <a :href="news.imageUrl" target="_blank" rel="noopener" class="no-underline">Open</a>
+    <p v-if="news.imageUrl" class="mb-4">
+      <strong>Image link:</strong>
+      <a :href="news.imageUrl" target="_blank" rel="noopener" class="text-blue-500 underline">
+        Open
+      </a>
     </p>
 
     <div class="mt-4">
-      <RouterLink :to="{ name: 'news-discussion', params: { id: news.id } }">
+      <RouterLink
+        :to="{ name: 'news-discussion', params: { id: news.id } }"
+        class="inline-block border border-green-500 text-green-600 dark:text-green-400 
+               rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100 
+               dark:hover:bg-slate-800 transition"
+      >
         View comments & votes
       </RouterLink>
     </div>

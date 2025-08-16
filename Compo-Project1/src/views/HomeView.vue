@@ -46,10 +46,20 @@ function handleToolbarChange() {
     @update:filter="handleToolbarChange"
   />
 
-    <!-- States -->
-    <div v-if="newsStore.loading" class="text-slate-500">Loading…</div>
-    <div v-else-if="newsStore.errorMsg" class="text-red-600">Error: {{ newsStore.errorMsg }}</div>
-    <div v-else-if="newsStore.filteredNews.length === 0" class="text-slate-500">No news found.</div>
+<!-- States -->
+<div
+  v-if="newsStore.loading"
+  class="text-slate-500 border border-green-500 rounded-md px-3 py-2 text-center"
+>
+  Loading…
+</div>
+<div v-else-if="newsStore.errorMsg" class="text-red-600">
+  Error: {{ newsStore.errorMsg }}
+</div>
+<div v-else-if="newsStore.filteredNews.length === 0" class="text-slate-500">
+  No news found.
+</div>
+
 
     <!-- ใช้คอมโพเนนต์รายการ (ตัด all-comments ออก) -->
     <div v-else class="mx-auto w-11/12 md:w-3/4 lg:w-2/3">
