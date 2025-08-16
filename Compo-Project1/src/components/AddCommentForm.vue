@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useRoute, RouterLink } from 'vue-router'
+
 
 const props = defineProps<{ voted: boolean }>()
 const emit = defineEmits<{ (e: 'submit', payload: { username: string; text: string; link: string; vote: 'fake' | 'not_fake' | null }): void }>()
@@ -36,6 +38,7 @@ function handleSubmit() {
 </script>
 
 <template>
+  
   <div>
     <h3 class="mt-4">Add your comment / image URL</h3>
     <div class="flex flex-col gap-2">
@@ -49,6 +52,17 @@ function handleSubmit() {
       </div>
     </div>
   </div>
+  <!-- 🔙 Back to Home -->
+    <div class="mb-4">
+      <RouterLink
+        :to="{ name: 'news-list' }"
+        class="inline-block border border-green-500 text-green-600 dark:text-green-400 
+               rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100 
+               dark:hover:bg-slate-800 transition"
+      >
+        ← Back to Home
+      </RouterLink>
+    </div>
 </template>
 
 
