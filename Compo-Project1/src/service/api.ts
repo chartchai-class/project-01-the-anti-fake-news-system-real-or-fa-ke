@@ -1,4 +1,4 @@
-import type { DB, NewsItem } from '@/types'
+import type { DB, NewsItem, CommentItem } from '@/types'
 
 let cachedDB: DB | null = null
 
@@ -28,8 +28,8 @@ export async function getNewsById(id: number): Promise<NewsItem | undefined> {
 export async function getCommentsByNewsId(newsId: number) {
   const db = await fetchDB()
   return db.comments
-    .filter((c: any) => Number(c.newsId) === Number(newsId))
-    .sort((a: any, b: any) => new Date(b.createdAt || b.at).getTime() - new Date(a.createdAt || a.at).getTime())
+    .filter((c: CommentItem) => Number(c.newsId) === Number(newsId))
+    .sort((a: CommentItem, b: CommentItem) => new Date(b.createdAt || b.at || '').getTime() - new Date(a.createdAt || a.at || '').getTime())
 }
 
 export async function getDeveloper() {

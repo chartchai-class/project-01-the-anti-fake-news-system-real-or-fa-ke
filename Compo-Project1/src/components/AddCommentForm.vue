@@ -14,7 +14,8 @@ const isValid = computed(() => {
   return (
     props.voted === true &&
     username.value.trim().length > 0 &&
-    text.value.trim().length > 0
+    text.value.trim().length > 0 &&
+    username.value.trim().length <= 50
   )
 })
 
@@ -42,7 +43,17 @@ function handleSubmit() {
     <h3 class="mt-4">Add your comment / image URL</h3>
     <div class="flex flex-col gap-2">
       <div class="grid gap-2">
-        <input v-model="username" type="text" placeholder="Your UserName" class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" required />
+        <input 
+          v-model="username" 
+          type="text" 
+          placeholder="Your UserName" 
+          maxlength="50"
+          class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" 
+          required 
+        />
+        <div class="text-xs text-slate-500 dark:text-slate-400">
+          {{ username.length }}/50 characters
+        </div>
       </div>
       <div class="grid gap-2 grid-cols-1 md:[grid-template-columns:1fr_1fr_auto]">
         <input v-model="text" type="text" placeholder="Your comment..." class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" />

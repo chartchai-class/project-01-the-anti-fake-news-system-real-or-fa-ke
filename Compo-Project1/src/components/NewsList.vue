@@ -15,8 +15,14 @@ interface NewsItem {
   votes?: { fake: number; notFake: number }
 }
 
-const props = withDefaults(defineProps<{ news: NewsItem[] }>(), {
-  news: () => []
+interface Props {
+  news: NewsItem[]
+  filter?: 'all' | 'fake' | 'not-fake'
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  news: () => [],
+  filter: 'all'
 })
 
 // --- เพิ่ม logic merge โหวต user ---
@@ -28,7 +34,7 @@ const mergedNews = computed(() => {
   // Map: newsId -> vote type
   const voteMap = new Map<number, 'fake' | 'not_fake'>()
   userVotes.forEach(i => {
-    const payload = i.payload as any
+    const payload = i.payload as { newsId: number; vote: 'fake' | 'not_fake' }
     if (payload.newsId && payload.vote) {
       voteMap.set(Number(payload.newsId), payload.vote)
     }
@@ -61,7 +67,13 @@ function statusLabel(s: unknown): string {
 </script>
 
 <template>
-  <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+  <div>
+    <div v-if="props.filter !== 'all'" class="mb-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+      <p class="text-sm text-slate-600 dark:text-slate-400">
+        🔍 Currently showing: <strong class="capitalize">{{ props.filter.replace('-', ' ') }}</strong> news only
+      </p>
+    </div>
+    <ul class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
     <li v-for="item in mergedNews" :key="item.id" class="group">
       <RouterLink
         :to="{ name: 'news-detail', params: { id: item.id } }"
@@ -71,7 +83,7 @@ function statusLabel(s: unknown): string {
         <img
           v-if="item.imageUrl"
           :src="item.imageUrl"
-          alt=""
+          :alt="`Image for news: ${item.topic}`"
           class="mb-2 h-40 w-full rounded-lg object-cover"
           loading="lazy"
           decoding="async"
@@ -105,5 +117,6 @@ function statusLabel(s: unknown): string {
           </div>
       </RouterLink>
     </li>
-  </ul>
+    </ul>
+  </div>
 </template>

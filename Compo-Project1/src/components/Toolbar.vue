@@ -35,10 +35,11 @@ const filterProxy = computed({
           class="w-full sm:w-auto rounded-md border border-green-500 bg-white px-3 py-1.5 pr-8 text-sm 
                  focus:outline-none focus:ring-2 focus:ring-green-400 
                  dark:border-green-600 dark:bg-slate-900 dark:text-slate-100"
+          :aria-label="`Show ${perPageProxy} items per page`"
         >
-          <option :value="6">6</option>
-          <option :value="10">10</option>
-          <option :value="20">20</option>
+          <option :value="6">6 items</option>
+          <option :value="10">10 items</option>
+          <option :value="20">20 items</option>
         </select>
         <span
           class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-slate-400"
@@ -48,12 +49,14 @@ const filterProxy = computed({
 
     <!-- Filter buttons -->
     <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+      <span class="text-sm text-slate-600 dark:text-slate-300 mr-2">Filter:</span>
       <button
         class="flex-1 sm:flex-none px-3 py-1.5 text-sm rounded-md border border-green-500 transition hover:bg-green-100 dark:hover:bg-slate-800"
         :class="filterProxy==='all' 
           ? 'bg-green-600 text-white border-green-600 dark:border-green-600' 
           : 'bg-transparent text-green-600 dark:text-green-400'"
         @click="filterProxy = 'all'"
+        :aria-label="`Show all news (currently ${filterProxy === 'all' ? 'active' : 'inactive'})`"
       >All</button>
 
       <button
@@ -62,6 +65,7 @@ const filterProxy = computed({
           ? 'bg-green-600 text-white border-green-600 dark:border-green-600' 
           : 'bg-transparent text-green-600 dark:text-green-400'"
         @click="filterProxy = 'fake'"
+        :aria-label="`Show fake news only (currently ${filterProxy === 'fake' ? 'active' : 'inactive'})`"
       >Fake</button>
 
       <button
@@ -70,6 +74,7 @@ const filterProxy = computed({
           ? 'bg-green-600 text-white border-green-600 dark:border-green-600' 
           : 'bg-transparent text-green-600 dark:text-green-400'"
         @click="filterProxy = 'not-fake'"
+        :aria-label="`Show not fake news only (currently ${filterProxy === 'not-fake' ? 'active' : 'inactive'})`"
       >Not Fake</button>
     </div>
   </div>

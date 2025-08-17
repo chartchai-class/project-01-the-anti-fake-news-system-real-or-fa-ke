@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { getDeveloper } from '@/service/api'
-import { useRoute, RouterLink } from 'vue-router'
 import BackToHome from '@/components/BackToHome.vue'
 
-const developer = ref<any[]>([])
+const developer = ref<Array<{
+  id: string | number
+  name: string
+  code: string
+  description: string
+  imageUrl?: string
+}>>([])
 
 onMounted(async () => {
   developer.value = await getDeveloper()

@@ -54,7 +54,11 @@ function selectItem(item: NewsItem) {
 </script>
 
 <template>
-  <div class="relative w-full mx-auto max-w-[1250px]">
+      <div class="relative w-full mx-auto max-w-[1250px]">
+      <!-- Search status -->
+      <div v-if="query && results.length > 0" class="mb-2 text-sm text-slate-600 dark:text-slate-400">
+        🔍 Found {{ results.length }} result{{ results.length !== 1 ? 's' : '' }} for "{{ query }}"
+      </div>
     <input
       type="search"
       :value="query"
@@ -62,7 +66,9 @@ function selectItem(item: NewsItem) {
       @input="onInput"
       @focus="isOpen = results.length > 0"
       @keydown.escape="isOpen = false"
+      @keydown.enter="results.length > 0 && selectItem(results[0])"
       class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm shadow-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-green-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-500"
+      :aria-label="`Search news topics. Press Enter to select first result, Escape to close.`"
     />
 
     <div v-if="isLoading" class="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-slate-400">Loading…</div>
@@ -82,6 +88,9 @@ function selectItem(item: NewsItem) {
         {{ item.topic }}
       </li>
       <li v-if="!results.length" class="px-3 py-2 text-sm text-slate-500 dark:text-slate-400">No results</li>
+      <li v-if="results.length > 0" class="px-3 py-2 text-xs text-slate-400 dark:text-slate-500 border-t border-slate-200 dark:border-slate-700">
+        💡 Press Enter to select first result, Escape to close
+      </li>
     </ul>
   </div>
 </template>
