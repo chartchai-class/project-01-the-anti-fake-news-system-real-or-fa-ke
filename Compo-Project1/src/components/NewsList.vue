@@ -106,16 +106,18 @@ function statusLabel(s: unknown): string {
             <div class="text-xs text-slate-500 dark:text-slate-400">
               Votes: Fake {{ item.votes?.fake ?? '-' }}, Not Fake {{ item.votes?.notFake ?? '-' }}
               <div class="w-full h-2 mt-1 bg-slate-200 rounded overflow-hidden flex dark:bg-slate-700">
-                <div
-                  v-if="item.votes && ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0)) > 0"
-                  class="h-full bg-red-400 dark:bg-red-600 transition-all duration-300 group-hover:scale-y-125"
-                  :style="{ width: (((item.votes?.fake ?? 0) / ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0))) * 100) + '%' }"
-                ></div>
-                <div
-                  v-if="item.votes && ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0)) > 0"
-                  class="h-full bg-green-400 dark:bg-green-600 transition-all duration-300 group-hover:scale-y-125"
-                  :style="{ width: (((item.votes?.notFake ?? 0) / ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0))) * 100) + '%' }"
-                ></div>
+                <template v-if="item.votes && ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0)) > 0">
+                  <div
+                    v-if="(item.votes?.fake ?? 0) > 0"
+                    class="h-full bg-red-400 dark:bg-red-600 transition-all duration-300 group-hover:scale-y-125"
+                    :style="{ width: (((item.votes?.fake ?? 0) / ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0))) * 100) + '%' }"
+                  ></div>
+                  <div
+                    v-if="(item.votes?.notFake ?? 0) > 0"
+                    class="h-full bg-green-400 dark:bg-green-600 transition-all duration-300 group-hover:scale-y-125"
+                    :style="{ width: (((item.votes?.notFake ?? 0) / ((item.votes?.fake ?? 0) + (item.votes?.notFake ?? 0))) * 100) + '%' }"
+                  ></div>
+                </template>
                 <div v-else class="h-full bg-slate-300 dark:bg-slate-800 w-full transition-all duration-300 group-hover:scale-y-125"></div>
               </div>
             </div>

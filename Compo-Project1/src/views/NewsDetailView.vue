@@ -24,6 +24,24 @@ const userVote = computed(() => {
   return userVote ? (userVote.payload as { newsId: number; vote: 'fake' | 'not_fake' }).vote : null
 })
 
+// Merge user vote with base votes for display
+const mergedVotes = computed(() => {
+  if (!news.value || !news.value.votes) return { fake: 0, notFake: 0 }
+  
+  const baseVotes = { ...news.value.votes }
+  const currentUserVote = userVote.value
+  
+  if (currentUserVote) {
+    if (currentUserVote === 'fake') {
+      baseVotes.fake = (baseVotes.fake ?? 0) + 1
+    } else if (currentUserVote === 'not_fake') {
+      baseVotes.notFake = (baseVotes.notFake ?? 0) + 1
+    }
+  }
+  
+  return baseVotes
+})
+
 onMounted(async () => {
   const db = await getDB()
   const id = Number(route.params.id)
@@ -96,36 +114,39 @@ onMounted(async () => {
       
       <div class="flex items-center gap-4 text-sm">
         <span class="text-red-600 dark:text-red-400">
-          ❌ Fake: {{ news.votes.fake }}
+          ❌ Fake: {{ mergedVotes.fake }}
         </span>
         <span class="text-green-600 dark:text-green-400">
-          ✅ Not Fake: {{ news.votes.notFake }}
+          ✅ Not Fake: {{ mergedVotes.notFake }}
         </span>
         <span class="text-slate-500 dark:text-slate-400">
-          Total: {{ news.votes.fake + news.votes.notFake }}
+          Total: {{ mergedVotes.fake + mergedVotes.notFake }}
         </span>
       </div>
-      <div class="w-full h-2 mt-2 bg-slate-200 rounded overflow-hidden dark:bg-slate-700">
-        <div
-          v-if="(news.votes.fake + news.votes.notFake) > 0"
-          class="h-full bg-red-400 dark:bg-red-600 transition-all duration-300"
-          :style="{ width: ((news.votes.fake / (news.votes.fake + news.votes.notFake)) * 100) + '%' }"
-        ></div>
-        <div
-          v-if="(news.votes.fake + news.votes.notFake) > 0"
-          class="h-full bg-green-400 dark:bg-green-600 transition-all duration-300"
-          :style="{ width: ((news.votes.notFake / (news.votes.fake + news.votes.notFake)) * 100) + '%' }"
-        ></div>
+      <div class="w-full h-2 mt-2 bg-slate-200 rounded overflow-hidden flex dark:bg-slate-700">
+        <template v-if="(mergedVotes.fake + mergedVotes.notFake) > 0">
+          <div
+            v-if="mergedVotes.fake > 0"
+            class="h-full bg-red-400 dark:bg-red-600 transition-all duration-300"
+            :style="{ width: ((mergedVotes.fake / (mergedVotes.fake + mergedVotes.notFake)) * 100) + '%' }"
+          ></div>
+          <div
+            v-if="mergedVotes.notFake > 0"
+            class="h-full bg-green-400 dark:bg-green-600 transition-all duration-300"
+            :style="{ width: ((mergedVotes.notFake / (mergedVotes.fake + mergedVotes.notFake)) * 100) + '%' }"
+          ></div>
+        </template>
+        <div v-else class="h-full bg-slate-300 dark:bg-slate-800 w-full transition-all duration-300"></div>
       </div>
       
       <!-- Vote percentage breakdown -->
-      <div v-if="(news.votes.fake + news.votes.notFake) > 0" class="mt-2 text-xs text-slate-600 dark:text-slate-400">
+      <div v-if="(mergedVotes.fake + mergedVotes.notFake) > 0" class="mt-2 text-xs text-slate-600 dark:text-slate-400">
         <span class="text-red-600 dark:text-red-400">
-          Fake: {{ Math.round((news.votes.fake / (news.votes.fake + news.votes.notFake)) * 100) }}%
+          Fake: {{ Math.round((mergedVotes.fake / (mergedVotes.fake + mergedVotes.notFake)) * 100) }}%
         </span>
         <span class="mx-2">•</span>
         <span class="text-green-600 dark:text-green-400">
-          Not Fake: {{ Math.round((news.votes.notFake / (news.votes.fake + news.votes.notFake)) * 100) }}%
+          Not Fake: {{ Math.round((mergedVotes.notFake / (mergedVotes.fake + mergedVotes.notFake)) * 100) }}%
         </span>
       </div>
     </div>
