@@ -44,6 +44,8 @@ export interface CommentItem {
 export interface DB {
   news: NewsItem[]
   comments: CommentItem[]
+  developer: any[]
+  users: any[]
 }
 
 /** params ของ route /news/:id */
