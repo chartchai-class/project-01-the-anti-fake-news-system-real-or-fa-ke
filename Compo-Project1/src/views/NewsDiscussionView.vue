@@ -123,24 +123,49 @@ function handleAddComment(payload: { username: string; text: string; link: strin
         Topic: <strong>{{ currentNews?.topic || 'Loading...' }}</strong>
       </p>
     </div>
-    <!-- Flash message (Tailwind only, no CSS) -->
-    <div
-      v-if="flashMessage"
-      class="mb-3 px-4 py-2 rounded bg-green-100 text-green-800 border border-green-300 text-center font-semibold shadow transition-all duration-300 dark:bg-green-900 dark:text-green-100 dark:border-green-700"
+    <!-- Flash popup message -->
+    <Transition
+      enter-active-class="transition-all duration-300 ease-out"
+      enter-from-class="opacity-0 scale-90 translate-y-2"
+      enter-to-class="opacity-100 scale-100 translate-y-0"
+      leave-active-class="transition-all duration-200 ease-in"
+      leave-from-class="opacity-100 scale-100 translate-y-0"
+      leave-to-class="opacity-0 scale-90 translate-y-2"
     >
-      {{ flashMessage }}
-    </div>
+              <div
+          v-if="flashMessage"
+          class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 max-w-sm bg-white border border-green-200 rounded-lg shadow-lg dark:bg-slate-800 dark:border-green-700"
+        >
+        <div class="flex items-center gap-3 p-4">
+          <!-- Success icon -->
+          <div class="flex-shrink-0">
+            <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <!-- Message text -->
+          <div class="flex-1">
+            <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+              {{ flashMessage }}
+            </p>
+          </div>
+          <!-- Close button -->
+          <button
+            @click="flashMessage = ''"
+            class="flex-shrink-0 inline-flex rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 dark:text-gray-500 dark:hover:text-gray-400"
+          >
+            <span class="sr-only">Close</span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </Transition>
     
     <VotesPanel :votes="votes" :disabled="hasVoted" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
     <AddCommentForm :voted="hasVoted" @submit="handleAddComment" />
     <CommentsList :comments="comments" />
   </section>
 </template>
-<style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-}
-</style>
+
