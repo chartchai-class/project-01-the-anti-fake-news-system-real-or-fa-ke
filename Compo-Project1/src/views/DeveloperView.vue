@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { getDeveloper } from '@/service/api'
 import { useRoute, RouterLink } from 'vue-router'
+import BackToHome from '@/components/BackToHome.vue'
 
 const developer = ref<any[]>([])
 
@@ -14,16 +15,7 @@ onMounted(async () => {
 
 <template>
   <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 dark:text-slate-100">
-     <div class="mb-4">
-      <RouterLink
-        :to="{ name: 'news-list' }"
-        class="inline-block border border-green-500 text-green-600 dark:text-green-400 
-               rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100 
-               dark:hover:bg-slate-800 transition"
-      >
-        ← Back to Home
-      </RouterLink>
-    </div>
+    <BackToHome />
     <h1 class="text-xl font-semibold mb-2">Project & Team</h1>
     <p class="text-[1.05rem] text-slate-600 dark:text-slate-400">
       Real or Fa‑Ke is a community‑driven tool to help identify and flag potential fake news. People can vote, add evidence, and discuss to reach a clearer understanding together.

@@ -6,6 +6,7 @@ import { saveInteraction, getInteractions } from '@/service/localStorage'
 import VotesPanel from '@/components/VotesPanel.vue'
 import AddCommentForm from '@/components/AddCommentForm.vue'
 import CommentsList from '@/components/CommentsList.vue'
+import BackToHome from '@/components/BackToHome.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -107,6 +108,7 @@ function handleAddComment(payload: { username: string; text: string; link: strin
 
 <template>
   <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100">
+    <BackToHome />
     <!-- Flash message (Tailwind only, no CSS) -->
     <div
       v-if="flashMessage"
@@ -116,9 +118,7 @@ function handleAddComment(payload: { username: string; text: string; link: strin
     </div>
 
     <VotesPanel :votes="votes" :disabled="hasVoted" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
-
     <AddCommentForm :voted="hasVoted" @submit="handleAddComment" />
-
     <CommentsList :comments="comments" />
   </section>
 </template>
