@@ -4,7 +4,7 @@ import { getDB } from '@/service/api'
 import NewsList from '@/components/NewsList.vue'
 import Toolbar from '@/components/Toolbar.vue'
 import Pagination from '@/components/Pagination.vue'
-import Sreachbar from '@/components/Sreachbar.vue'
+import Sreachbar from '@/components/SreachBar.vue'
 import LoadingSkeleton from '@/components/LoadingSkeleton.vue'
 import { useNewsStore } from '@/stores/news'
 
