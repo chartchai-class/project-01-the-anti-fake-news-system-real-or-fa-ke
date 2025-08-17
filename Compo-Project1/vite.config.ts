@@ -45,4 +45,26 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    // Optimize for Vercel deployment
+    target: 'esnext',
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: (id: string) => {
+          if (id.includes('@vercel/analytics') || id.includes('@vercel/speed-insights')) {
+            return 'analytics'
+          }
+          if (id.includes('vue') || id.includes('pinia') || id.includes('vue-router')) {
+            return 'vendor'
+          }
+        }
+      }
+    }
+  },
+  define: {
+    // Make environment variables available to the client
+    __VERCEL_ANALYTICS_ID__: JSON.stringify(process.env.VITE_VERCEL_ANALYTICS_ID || ''),
+    __VERCEL_PROJECT_ID__: JSON.stringify(process.env.VITE_VERCEL_PROJECT_ID || '')
+  }
 })
