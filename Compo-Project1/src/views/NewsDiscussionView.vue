@@ -130,13 +130,6 @@ function handleAddComment(payload: { username: string; text: string; link: strin
     >
       {{ flashMessage }}
     </div>
-
-    <!-- Keyboard shortcuts info -->
-    <div class="mb-4 p-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-      <p class="text-xs text-blue-700 dark:text-blue-300">
-        💡 <kbd class="px-1 py-0.5 bg-blue-200 dark:bg-blue-800 rounded text-xs">Tab</kbd> to navigate • <kbd class="px-1 py-0.5 bg-blue-200 dark:bg-blue-800 rounded text-xs">Enter</kbd> to submit • <kbd class="px-1 py-0.5 bg-blue-200 dark:bg-blue-800 rounded text-xs">Esc</kbd> to close
-      </p>
-    </div>
     
     <VotesPanel :votes="votes" :disabled="hasVoted" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
     <AddCommentForm :voted="hasVoted" @submit="handleAddComment" />

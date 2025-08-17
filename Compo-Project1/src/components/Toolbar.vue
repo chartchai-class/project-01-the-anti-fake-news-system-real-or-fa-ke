@@ -49,7 +49,7 @@ const filterProxy = computed({
 
     <!-- Filter buttons -->
     <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-      <span class="text-sm text-slate-600 dark:text-slate-300 mr-2">Filter:</span>
+      <span class="text-sm text-slate-600 dark:text-slate-300 mr-2 hidden sm:inline">Filter:</span>
       <button
         class="flex-1 sm:flex-none px-3 py-1.5 text-sm rounded-md border border-green-500 transition hover:bg-green-100 dark:hover:bg-slate-800"
         :class="filterProxy==='all' 
