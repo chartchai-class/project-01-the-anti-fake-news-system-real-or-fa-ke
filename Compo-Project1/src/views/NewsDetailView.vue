@@ -1,14 +1,28 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { getDB } from '@/service/api'
 import { useRouter, useRoute, RouterLink } from 'vue-router'
 import BackToHome from '@/components/BackToHome.vue'
 import type { NewsItem } from '@/types'
+import { getInteractions } from '@/service/localStorage'
 
 
 const route = useRoute()
 const router = useRouter()
 const news = ref<NewsItem | null>(null)
+
+// Get user's vote for this news item
+const userVote = computed(() => {
+  if (!news.value) return null
+  
+  const userVotes = getInteractions('news').filter(i => i.type === 'vote' && i.payload)
+  const userVote = userVotes.find(i => {
+    const payload = i.payload as { newsId: number; vote: 'fake' | 'not_fake' }
+    return payload.newsId === Number(news.value?.id)
+  })
+  
+  return userVote ? (userVote.payload as { newsId: number; vote: 'fake' | 'not_fake' }).vote : null
+})
 
 onMounted(async () => {
   const db = await getDB()
@@ -61,6 +75,25 @@ onMounted(async () => {
     <!-- Votes display -->
     <div v-if="news.votes" class="mb-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
       <h3 class="text-sm font-semibold mb-2">Current Votes</h3>
+      
+      <!-- User's vote result -->
+      <div v-if="userVote" class="mb-3 p-2 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+        <p class="text-sm text-blue-700 dark:text-blue-300">
+          🗳️ <strong>Your Vote:</strong> 
+          <span class="font-semibold">
+            {{ userVote === 'fake' ? '❌ Fake News' : '✅ Not Fake News' }}
+          </span>
+        </p>
+      </div>
+      
+      <!-- Encourage voting if user hasn't voted -->
+      <div v-else class="mb-3 p-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+        <p class="text-sm text-amber-700 dark:text-amber-300">
+          💭 <strong>Haven't voted yet?</strong> 
+          <span>Share your opinion on this news!</span>
+        </p>
+      </div>
+      
       <div class="flex items-center gap-4 text-sm">
         <span class="text-red-600 dark:text-red-400">
           ❌ Fake: {{ news.votes.fake }}
@@ -84,6 +117,17 @@ onMounted(async () => {
           :style="{ width: ((news.votes.notFake / (news.votes.fake + news.votes.notFake)) * 100) + '%' }"
         ></div>
       </div>
+      
+      <!-- Vote percentage breakdown -->
+      <div v-if="(news.votes.fake + news.votes.notFake) > 0" class="mt-2 text-xs text-slate-600 dark:text-slate-400">
+        <span class="text-red-600 dark:text-red-400">
+          Fake: {{ Math.round((news.votes.fake / (news.votes.fake + news.votes.notFake)) * 100) }}%
+        </span>
+        <span class="mx-2">•</span>
+        <span class="text-green-600 dark:text-green-400">
+          Not Fake: {{ Math.round((news.votes.notFake / (news.votes.fake + news.votes.notFake)) * 100) }}%
+        </span>
+      </div>
     </div>
 
     <p v-if="news.imageUrl" class="mb-4">
@@ -100,8 +144,16 @@ onMounted(async () => {
                rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100
                dark:hover:bg-slate-800 transition"
       >
-        View comments & votes
+        {{ userVote ? 'View comments & discussion' : 'Vote & comment' }}
       </RouterLink>
+      
+      <!-- Additional info about user's participation -->
+      <div v-if="userVote" class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+        💡 You've already participated in this discussion
+      </div>
+      <div v-else class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+        💡 Click above to join the discussion and vote
+      </div>
     </div>
   </section>
 </template>
