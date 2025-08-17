@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRoute, RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { getDB } from '@/service/api'
 import { saveInteraction, getInteractions } from '@/service/localStorage'
 import VotesPanel from '@/components/VotesPanel.vue'
 import AddCommentForm from '@/components/AddCommentForm.vue'
 import CommentsList from '@/components/CommentsList.vue'
+import BackToHome from '@/components/BackToHome.vue' // Import BackToHome.vue
 
 const route = useRoute()
 const newsId = Number(route.params.id)
@@ -82,24 +83,11 @@ function handleAddComment(payload: { username: string; text: string; link: strin
 }
 </script>
 
-<template> 
-
+<template>
   <section class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100">
-<!-- 🔙 Back to Home -->
-    <div class="mb-4">
-      <RouterLink
-        :to="{ name: 'news-list' }"
-        class="inline-block border border-green-500 text-green-600 dark:text-green-400 
-               rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100 
-               dark:hover:bg-slate-800 transition"
-      >
-        ← Back to Home
-      </RouterLink>
-    </div>
+    <BackToHome />
     <VotesPanel :votes="votes" :disabled="hasVoted" @vote-fake="handleVoteFake" @vote-not-fake="handleVoteNotFake" />
-
     <AddCommentForm :voted="hasVoted" @submit="handleAddComment" />
-
     <CommentsList :comments="comments" />
   </section>
 </template>

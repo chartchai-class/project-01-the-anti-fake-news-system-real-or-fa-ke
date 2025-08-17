@@ -2,6 +2,8 @@
 import { onMounted, ref } from 'vue'
 import { getDB } from '@/service/api'
 import { useRoute, RouterLink } from 'vue-router'
+import BackToHome from '@/components/BackToHome.vue'
+
 
 const route = useRoute()
 const news = ref<any | null>(null)
@@ -20,17 +22,7 @@ onMounted(async () => {
     class="mx-auto w-11/12 md:w-3/4 lg:w-2/3 bg-white border border-slate-200 rounded-xl p-4 
            dark:bg-slate-900 dark:border-slate-700 dark:text-slate-100"
   >
-    <!-- 🔙 Back to Home -->
-    <div class="mb-4">
-      <RouterLink
-        :to="{ name: 'news-list' }"
-        class="inline-block border border-green-500 text-green-600 dark:text-green-400 
-               rounded-md px-3 py-1.5 text-sm font-medium hover:bg-green-100 
-               dark:hover:bg-slate-800 transition"
-      >
-        ← Back to Home
-      </RouterLink>
-    </div>
+    <BackToHome />
 
     <h2 class="text-xl font-semibold mb-2">{{ news.topic }}</h2>
 
