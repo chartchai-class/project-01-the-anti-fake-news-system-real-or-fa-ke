@@ -31,4 +31,4 @@ Ensures the app works flawlessly through **testing**.
 
 ---
 
-🔗 [Developer Page](https://project-01-the-anti-fake-news-syste-three.vercel.app/developer)
+🔗 [Website Page](https://project-01-the-anti-fake-news-syste-three.vercel.app)
