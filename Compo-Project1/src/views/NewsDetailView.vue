@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { getDB } from '@/service/api'
-import { useRoute, RouterLink } from 'vue-router'
+import { useRouter, useRoute, RouterLink } from 'vue-router'
 import BackToHome from '@/components/BackToHome.vue'
 
 
