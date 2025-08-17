@@ -6,7 +6,7 @@ import { saveInteraction, getInteractions } from '@/service/localStorage'
 import VotesPanel from '@/components/VotesPanel.vue'
 import AddCommentForm from '@/components/AddCommentForm.vue'
 import CommentsList from '@/components/CommentsList.vue'
-import BackToHome from '@/components/BackToHome.vue' // Import BackToHome.vue
+import BackToHome from '@/components/BackToHome.vue'
 
 const route = useRoute()
 const newsId = Number(route.params.id)
