@@ -26,6 +26,7 @@ onMounted(async () => {
 
 function handleToolbarChange() {
   newsStore.setLoading(true)
+  newsStore.setPage(1) // Reset to page 1 when toolbar values change
   setTimeout(() => {
     newsStore.setLoading(false)
   }, 500)

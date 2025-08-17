@@ -42,6 +42,18 @@ onMounted(async () => {
         <span class="rounded-md bg-slate-100 px-2 py-1 text-slate-600 dark:bg-slate-800 dark:text-slate-300">TailwindCSS</span>
         <span class="rounded-md bg-slate-100 px-2 py-1 text-slate-600 dark:bg-slate-800 dark:text-slate-300">Vue Router</span>
       </div>
+      
+      <h2 class="text-base font-medium mt-4 mb-2">Source Code</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400">
+        <a 
+          href="https://github.com/chartchai-class/project-01-the-anti-fake-news-system-real-or-fa-ke" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors"
+        >
+          📁 View on GitHub
+        </a>
+      </p>
     </div>
     <br>
     <div class="grid [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))] gap-4">
