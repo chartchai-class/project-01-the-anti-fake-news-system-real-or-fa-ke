@@ -32,10 +32,14 @@ const routes: RouteRecordRaw[] = [
     component: () => import(/* webpackPrefetch: true */ '@/views/DeveloperView.vue'),
   },
   {
+    path: '/offline',
+    name: 'Offline',
+    component: () => import('@/views/OfflineView.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
-    name: 'not-found',
-    component: () => import('@/views/NotFoundView.vue'),
-    props: { resource: 'page' },
+    name: 'NotFound',
+    component: () => import('@/views/NotFound404.vue'),
   },
 ]
 
@@ -45,6 +49,11 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  // Redirect to OfflineView if offline and not already on OfflineView
+  if (!navigator.onLine && to.name !== 'Offline') {
+    next({ name: 'Offline' })
+    return
+  }
   NProgress.start()
   next()
 })
