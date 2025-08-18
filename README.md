@@ -32,3 +32,5 @@ Ensures the app works flawlessly through **testing**.
 ---
 
 🔗 [Website Page](https://project-01-the-anti-fake-news-syste-three.vercel.app)
+🔗 [Video Demo(Computer)](https://youtu.be/3HXUM8tP854)
+🔗 [Video Demo(Mobile)](https://youtu.be/HtzQWRhPaNc?si=0I8LW8bwZYs0Ch-Q)
